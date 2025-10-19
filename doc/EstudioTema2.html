@@ -1,0 +1,435 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>x</title>
+  <link rel="stylesheet" href="https://stackedit.io/style.css" />
+</head>
+
+<body class="stackedit">
+  <div class="stackedit__html"><h1 id="cfgs-desarrollo-de-aplicaciones-web">CFGS Desarrollo de Aplicaciones Web</h1>
+<ul>
+<li><a href="#cfgs-desarrollo-de-aplicaciones-web">CFGS Desarrollo de Aplicaciones Web</a>
+<ul>
+<li><a href="#1-entorno-de-desarrollo">1. Entorno de Desarrollo</a>
+<ul>
+<li><a href="#11-ubuntu-server-24043-lts">1.1 Ubuntu Server 24.04.3 LTS</a>
+<ul>
+<li><a href="#111-configuraci%C3%B3n-inicial">1.1.1 <strong>Configuración inicial</strong></a>
+<ul>
+<li><a href="#nombre-y-configuraci%C3%B3n-de-red">Nombre y configuración de red</a></li>
+<li><a href="#actualizar-el-sistema"><strong>Actualizar el sistema</strong></a></li>
+<li><a href="#configuraci%C3%B3n-fecha-y-hora"><strong>Configuración fecha y hora</strong></a></li>
+<li><a href="#cuentas-administradoras"><strong>Cuentas administradoras</strong></a></li>
+<li><a href="#cortafuegos-ufw"><strong>Cortafuegos (UFW)</strong></a>
+<ul>
+<li><a href="#instalacion">Instalacion</a></li>
+<li><a href="#configuracion">Configuracion</a></li>
+<li><a href="#monitorizacion">Monitorizacion</a></li>
+<li><a href="#mantenimiento">Mantenimiento</a></li>
+</ul>
+</li>
+<li><a href="#ssh"><strong>SSH</strong></a>
+<ul>
+<li><a href="#instalacion-1">Instalacion</a></li>
+<li><a href="#configuracion-1">Configuracion</a></li>
+<li><a href="#monitorizacion-1">Monitorizacion</a></li>
+<li><a href="#mantenimiento-1">Mantenimiento</a></li>
+</ul>
+</li>
+<li><a href="#antivirus"><strong>Antivirus</strong></a>
+<ul>
+<li><a href="#instalacion-2">Instalacion</a></li>
+<li><a href="#configuracion-2">Configuracion</a></li>
+<li><a href="#monitorizacion-2">Monitorizacion</a></li>
+<li><a href="#mantenimiento-2">Mantenimiento</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a href="#112-servidor-web-apache">1.1.2 Servidor web (Apache)</a>
+<ul>
+<li><a href="#instalaci%C3%B3n">Instalación</a></li>
+<li><a href="#configuracion-3">Configuracion</a></li>
+<li><a href="#monitorizacion-3">Monitorizacion</a></li>
+<li><a href="#mantenimiento-3">Mantenimiento</a></li>
+<li><a href="#virtual-hosts">Virtual Hosts</a></li>
+<li><a href="#permisos-y-usuarios">Permisos y usuarios</a></li>
+</ul>
+</li>
+<li><a href="#113-php-fpm">1.1.3 PHP-FPM</a>
+<ul>
+<li><a href="#instalacion-3">Instalacion</a></li>
+<li><a href="#configuracion-4">Configuracion</a></li>
+</ul>
+</li>
+<li><a href="#114-mysql">1.1.4 MySQL</a></li>
+<li><a href="#115-xdebug">1.1.5 XDebug</a></li>
+<li><a href="#116-dns">1.1.6 DNS</a></li>
+<li><a href="#117-sftp">1.1.7 SFTP</a></li>
+<li><a href="#118-apache-tomcat">1.1.8 Apache Tomcat</a></li>
+<li><a href="#119-ldap">1.1.9 LDAP</a></li>
+</ul>
+</li>
+<li><a href="#12-windows-11">1.2 Windows 11</a>
+<ul>
+<li><a href="#121-configuraci%C3%B3n-inicial">1.2.1 <strong>Configuración inicial</strong></a>
+<ul>
+<li><a href="#nombre-y-configuraci%C3%B3n-de-red-1"><strong>Nombre y configuración de red</strong></a></li>
+<li><a href="#cuentas-administradoras-1"><strong>Cuentas administradoras</strong></a></li>
+</ul>
+</li>
+<li><a href="#122-navegadores">1.2.2 <strong>Navegadores</strong></a></li>
+<li><a href="#123-movaxterm">1.2.3 <strong>MovaXterm</strong></a></li>
+<li><a href="#124-netbeans">1.2.4 <strong>Netbeans</strong></a>
+<ul>
+<li><a href="#creacion-de-proyectos">Creacion de proyectos</a></li>
+<li><a href="#eliminacion-de-proyectos">Eliminacion de proyectos</a></li>
+<li><a href="#informacion-del-ide">Informacion del IDE</a></li>
+</ul>
+</li>
+<li><a href="#125-visual-studio-code">1.2.5 <strong>Visual Studio Code</strong></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a href="#2-github">2. GitHub</a></li>
+<li><a href="#3entorno-de-explotaci%C3%B3n">3.Entorno de Explotación</a></li>
+</ul>
+</li>
+</ul>
+
+<table>
+<thead>
+<tr>
+<th align="center">DAW/DWES Tema2</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="center"><img src="images/portada.jpg" alt="Alt"></td>
+</tr>
+<tr>
+<td align="center">INSTALACIÓN, CONFIGURACIÓN Y DOCUMENTACIÓN DE ENTORNO DE DESARROLLO Y DEL ENTORNO DE EXPLOTACIÓN</td>
+</tr>
+</tbody>
+</table><h2 id="entorno-de-desarrollo">1. Entorno de Desarrollo</h2>
+<h3 id="ubuntu-server-24.04.3-lts">1.1 Ubuntu Server 24.04.3 LTS</h3>
+<p>Este documento es una guía detallada del proceso de instalación y configuración de un servidor de aplicaciones en Ubuntu Server utilizando Apache, con soporte PHP y MySQL</p>
+<h4 id="configuración-inicial">1.1.1 <strong>Configuración inicial</strong></h4>
+<h5 id="nombre-y-configuración-de-red">Nombre y configuración de red</h5>
+<blockquote>
+<p><strong>Nombre de la máquina</strong>: daw-used<br>
+<strong>Memoria RAM</strong>: 2G<br>
+<strong>Particiones</strong>: 150G(/) y resto (/var)<br>
+<strong>Configuración de red interface</strong>: enp0s3 <br>
+<strong>Dirección IP</strong> :10.199.10.22/22<br>
+<strong>GW</strong>: 10.199.8.1/22<br>
+<strong>DNS</strong>: 10.151.123.21 y 10.151.126.21</p>
+</blockquote>
+<p>Para comprobar esto usamos:</p>
+<pre class=" language-bash"><code class="prism  language-bash"><span class="token function">hostname</span>    <span class="token comment"># Para ver el nombre de la maquina</span>
+ip a        <span class="token comment"># Para ver la IP y interface</span>
+ip r        <span class="token comment"># Par ver la IP, interface y gateway</span>
+resolvectl  <span class="token comment"># Para ver el DNS</span>
+<span class="token function">df</span> -h       <span class="token comment"># Para ver las particiones</span>
+<span class="token function">fdisk</span> -l    <span class="token comment"># # Para ver las particiones (fromato mas limpio)</span>
+<span class="token function">cat</span> /etc/os-release <span class="token comment"># Ver la verison del SO</span>
+</code></pre>
+<hr>
+<p>Cambiamos el nombre de la maquina con:</p>
+<pre class=" language-bash"><code class="prism  language-bash"><span class="token function">sudo</span> hostnamectl set-hostname <span class="token operator">&lt;</span>nombre<span class="token operator">&gt;</span>
+<span class="token function">sudo</span> <span class="token function">nano</span> /etc/hosts
+</code></pre>
+<hr>
+<p>Editamos el fichero de configuración del interface de red  <strong><code>/etc/netplan</code></strong>, con estos datos:</p>
+<pre class=" language-yaml"><code class="prism  language-yaml"><span class="token comment"># This is the network config written by 'subiquity'network:</span>
+<span class="token key atrule">network</span><span class="token punctuation">:</span>
+  <span class="token key atrule">version</span><span class="token punctuation">:</span> <span class="token number">2</span>
+  <span class="token key atrule">ethernets</span><span class="token punctuation">:</span>
+    <span class="token key atrule">enp0s3</span><span class="token punctuation">:</span>
+      <span class="token key atrule">addresses</span><span class="token punctuation">:</span>
+        <span class="token punctuation">-</span> 10.199.10.22/22
+      <span class="token key atrule">nameservers</span><span class="token punctuation">:</span>
+        <span class="token key atrule">addresses</span><span class="token punctuation">:</span>
+          <span class="token punctuation">-</span> 10.151.123.21
+          <span class="token punctuation">-</span> 10.151.126.21
+        <span class="token key atrule">search</span><span class="token punctuation">:</span> <span class="token punctuation">[</span>jesus.local<span class="token punctuation">]</span>
+      <span class="token key atrule">routes</span><span class="token punctuation">:</span>
+        <span class="token punctuation">-</span> <span class="token key atrule">to</span><span class="token punctuation">:</span> default
+          <span class="token key atrule">via</span><span class="token punctuation">:</span> 10.199.8.1
+</code></pre>
+<h5 id="actualizar-el-sistema"><strong>Actualizar el sistema</strong></h5>
+<pre class=" language-bash"><code class="prism  language-bash"><span class="token function">sudo</span> apt update <span class="token operator">&amp;&amp;</span> <span class="token function">sudo</span> apt upgrade -y
+</code></pre>
+<h5 id="configuración-fecha-y-hora"><strong>Configuración fecha y hora</strong></h5>
+<pre class=" language-bash"><code class="prism  language-bash"><span class="token comment"># Comprobamos la fecha con:</span>
+<span class="token function">date</span>
+</code></pre>
+<p>En caso de que este mal hacemos esto: <a href="https://somebooks.es/establecer-la-fecha-hora-y-zona-horaria-en-la-terminal-de-ubuntu-20-04-lts/" title="Cambiar fecha y hora">Establecer fecha, hora y zona horaria</a></p>
+<pre class=" language-bash"><code class="prism  language-bash"><span class="token comment"># Ponemos la zona horaria correcta para cambiar la hora</span>
+<span class="token function">sudo</span> timedatectl set-timezone Europe/Madrid
+
+<span class="token comment"># Comprobamos que la fecha y/o hora han cambiado con:</span>
+<span class="token function">date</span>
+</code></pre>
+<h5 id="cuentas-administradoras"><strong>Cuentas administradoras</strong></h5>
+<blockquote>
+<ul>
+<li class="task-list-item"><input type="checkbox" class="task-list-item-checkbox" checked="true" disabled=""> root(inicio)</li>
+<li class="task-list-item"><input type="checkbox" class="task-list-item-checkbox" checked="true" disabled=""> miadmin/paso</li>
+<li class="task-list-item"><input type="checkbox" class="task-list-item-checkbox" checked="true" disabled=""> miadmin2/paso</li>
+</ul>
+</blockquote>
+<p>La cuenta <code>root</code> viene por defecto. Las otras dos las creamos con el comando:</p>
+<pre class=" language-bash"><code class="prism  language-bash"><span class="token function">sudo</span> adduser <span class="token operator">&lt;</span>nombre_usuario<span class="token operator">&gt;</span>
+<span class="token comment"># Te pedira contraseña, y el resto de cosas serán opcionales (teléfono, correo, etc)</span>
+
+<span class="token comment"># Para hacerlo administrador usamos:</span>
+<span class="token function">sudo</span> <span class="token function">usermod</span> -aG sudo,adm,cdrom,dip,plugdev,lxd <span class="token operator">&lt;</span>nombre_usuario<span class="token operator">&gt;</span>
+</code></pre>
+<p>o con:</p>
+<pre class=" language-bash"><code class="prism  language-bash"><span class="token function">sudo</span> <span class="token function">useradd</span> -m -d <span class="token operator">&lt;</span>/ruta/del/home<span class="token operator">&gt;</span> -s <span class="token operator">&lt;</span>/bin/bash<span class="token operator">&gt;</span> -G <span class="token operator">&lt;</span>grupo/s<span class="token operator">&gt;</span> <span class="token operator">&lt;</span>usuario<span class="token operator">&gt;</span>
+<span class="token function">sudo</span> <span class="token function">passwd</span> <span class="token operator">&lt;</span>usuario<span class="token operator">&gt;</span> <span class="token comment"># Para poner la contraseña</span>
+<span class="token function">sudo</span> <span class="token function">chown</span> -R <span class="token operator">&lt;</span>usuario<span class="token operator">&gt;</span>:<span class="token operator">&lt;</span>grupo<span class="token operator">&gt;</span> <span class="token operator">&lt;</span>/ruta/del/home<span class="token operator">&gt;</span> <span class="token comment"># Para cambiar el dueño de la carpeta home</span>
+</code></pre>
+<h5 id="cortafuegos-ufw"><strong>Cortafuegos (UFW)</strong></h5>
+<h6 id="instalacion">Instalacion</h6>
+<pre class=" language-bash"><code class="prism  language-bash"><span class="token function">sudo</span> apt update
+<span class="token function">sudo</span> apt <span class="token function">install</span> ufw     <span class="token comment"># Instalamos UFW si no está instalado</span>
+</code></pre>
+<h6 id="configuracion">Configuracion</h6>
+<pre class=" language-bash"><code class="prism  language-bash"><span class="token function">sudo</span> ufw <span class="token function">enable</span>          <span class="token comment"># Activamos el cortafuegos</span>
+<span class="token function">sudo</span> ufw allow 22        <span class="token comment"># Abrimos el puerto 22 (SSH)</span>
+</code></pre>
+<p>Para eliminar reglas específicas (por ejemplo IPv6 o cualquier otra):</p>
+<pre class=" language-bash"><code class="prism  language-bash"><span class="token function">sudo</span> ufw status numbered  <span class="token comment"># Mostramos reglas con número</span>
+<span class="token function">sudo</span> ufw delete 2         <span class="token comment"># Eliminamos la regla con el número correspondiente</span>
+</code></pre>
+<h6 id="monitorizacion">Monitorizacion</h6>
+<pre class=" language-bash"><code class="prism  language-bash"><span class="token function">sudo</span> ufw status verbose    <span class="token comment"># Mostramos el estado detallado del cortafuegos y las reglas activas</span>
+</code></pre>
+<h6 id="mantenimiento">Mantenimiento</h6>
+<pre class=" language-bash"><code class="prism  language-bash"><span class="token function">sudo</span> ufw disable           <span class="token comment"># Desactivamos el cortafuegos temporalmente</span>
+<span class="token function">sudo</span> ufw reset             <span class="token comment"># Reseteamos todas las reglas a la configuración inicial</span>
+</code></pre>
+<h5 id="ssh"><strong>SSH</strong></h5>
+<h6 id="instalacion-1">Instalacion</h6>
+<pre class=" language-bash"><code class="prism  language-bash"><span class="token function">sudo</span> apt update
+<span class="token function">sudo</span> apt <span class="token function">install</span> openssh-server   <span class="token comment"># Instalamos el servidor SSH</span>
+</code></pre>
+<h6 id="configuracion-1">Configuracion</h6>
+<pre class=" language-bash"><code class="prism  language-bash"><span class="token function">sudo</span> <span class="token function">nano</span> /etc/ssh/sshd_config   <span class="token comment"># Archivo de configuración SSH</span>
+<span class="token function">sudo</span> systemctl restart <span class="token function">ssh</span>       <span class="token comment"># Reiniciamos el servicio para aplicar cambios si hacemos</span>
+</code></pre>
+<h6 id="monitorizacion-1">Monitorizacion</h6>
+<pre class=" language-bash"><code class="prism  language-bash"><span class="token function">sudo</span> systemctl status <span class="token function">ssh</span>        <span class="token comment"># Comprobamos el estado del servicio</span>
+</code></pre>
+<h6 id="mantenimiento-1">Mantenimiento</h6>
+<pre class=" language-bash"><code class="prism  language-bash"><span class="token function">sudo</span> systemctl <span class="token function">enable</span> <span class="token function">ssh</span>         <span class="token comment"># Habilitamos que SSH se inicie al arrancar</span>
+<span class="token function">sudo</span> systemctl disable <span class="token function">ssh</span>        <span class="token comment"># Deshabilitamos el inicio automático si se necesita</span>
+<span class="token function">sudo</span> systemctl restart <span class="token function">ssh</span>        <span class="token comment"># Reiniciamos el servicio si hay problemas</span>
+</code></pre>
+<h5 id="antivirus"><strong>Antivirus</strong></h5>
+<h6 id="instalacion-2">Instalacion</h6>
+<p>Instalaremos el Antivirus <code>ClamAV</code>:</p>
+<pre class=" language-bash"><code class="prism  language-bash"><span class="token function">sudo</span> apt update <span class="token operator">&amp;&amp;</span> <span class="token function">sudo</span> apt <span class="token function">install</span> -y clamav
+</code></pre>
+<h6 id="configuracion-2">Configuracion</h6>
+<p>Si no quieres cambiar nada, puedes verificar la configuración.</p>
+<pre class=" language-bash"><code class="prism  language-bash"><span class="token function">cat</span> /etc/clamav/clamd.conf      <span class="token comment"># Mostramos la configuración del demonio</span>
+<span class="token function">cat</span> /etc/clamav/freshclam.conf  <span class="token comment"># Mostramos la configuración de actualizaciones</span>
+</code></pre>
+<p>Si quieres actualizar la base de datos de los virus:</p>
+<pre class=" language-bash"><code class="prism  language-bash"><span class="token function">sudo</span> systemctl stop clamav-freshclam   <span class="token comment"># Detenemos el servicio de actualizaciones</span>
+<span class="token function">sudo</span> freshclam                         <span class="token comment"># Actualizamos la base de datos de virus</span>
+<span class="token function">sudo</span> systemctl start clamav-freshclam  <span class="token comment"># Volvemos a iniciar el servicio</span>
+</code></pre>
+<h6 id="monitorizacion-2">Monitorizacion</h6>
+<pre class=" language-bash"><code class="prism  language-bash"><span class="token function">sudo</span> systemctl status clamav-daemon    <span class="token comment"># Comprobamos el estado del servicio ClamAV</span>
+<span class="token function">sudo</span> systemctl status clamav-freshclam <span class="token comment"># Comprobamos el estado del servicio de actualizaciones</span>
+</code></pre>
+<h6 id="mantenimiento-2">Mantenimiento</h6>
+<pre class=" language-bash"><code class="prism  language-bash"><span class="token function">sudo</span> systemctl <span class="token function">enable</span> clamav-daemon     <span class="token comment"># Habilitamos el demonio al inicio del sistema</span>
+<span class="token function">sudo</span> systemctl disable clamav-daemon    <span class="token comment"># Deshabilitamos el inicio automático si se necesita</span>
+<span class="token function">sudo</span> systemctl restart clamav-daemon    <span class="token comment"># Reiniciamos el servicio si hay problemas</span>
+</code></pre>
+<h4 id="servidor-web-apache">1.1.2 Servidor web (Apache)</h4>
+<h5 id="instalación">Instalación</h5>
+<pre class=" language-bash"><code class="prism  language-bash"><span class="token function">sudo</span> apt update
+<span class="token function">sudo</span> apt <span class="token function">install</span> apache2 -y   <span class="token comment"># Instalamos Apache</span>
+</code></pre>
+<h5 id="configuracion-3">Configuracion</h5>
+<pre class=" language-bash"><code class="prism  language-bash"><span class="token function">cat</span> /etc/apache2/apache2.conf   <span class="token comment"># Mostramos la configuración principal</span>
+<span class="token function">cat</span> /etc/apache2/sites-available/000-default.conf  <span class="token comment"># Configuración del sitio por defecto</span>
+</code></pre>
+<p>Para aplicar los cambios despues de editar usamos:</p>
+<pre class=" language-bash"><code class="prism  language-bash"><span class="token function">sudo</span> apache2ctl configtest      <span class="token comment"># Comprobamos que no de errores = "Syntax OK"</span>
+<span class="token function">sudo</span> systemctl restart apache2  <span class="token comment"># Reiniciamos el servicio para aplicar cambios</span>
+</code></pre>
+<p>Abrimos el puerto 80:</p>
+<pre class=" language-bash"><code class="prism  language-bash"><span class="token function">sudo</span> ufw allow 80         <span class="token comment"># Abrimos el puerto 80 (HTTP)</span>
+<span class="token function">sudo</span> ufw status numbered  <span class="token comment"># Mostramos reglas con número</span>
+<span class="token function">sudo</span> ufw delete 3         <span class="token comment"># Eliminamos la regla IPv6</span>
+</code></pre>
+<h5 id="monitorizacion-3">Monitorizacion</h5>
+<pre class=" language-bash"><code class="prism  language-bash"><span class="token function">sudo</span> systemctl status apache2   <span class="token comment"># Comprobamos si Apache está activo</span>
+<span class="token function">sudo</span> ufw status <span class="token operator">|</span> <span class="token function">grep</span> <span class="token string">"80"</span>     <span class="token comment"># Verificamos que el puerto 80 está escuchando</span>
+</code></pre>
+<h5 id="mantenimiento-3">Mantenimiento</h5>
+<pre class=" language-bash"><code class="prism  language-bash"><span class="token function">sudo</span> systemctl start apache2     <span class="token comment"># Iniciamos el servicio si está detenido</span>
+<span class="token function">sudo</span> systemctl stop apache2      <span class="token comment"># Detenemos el servicio</span>
+<span class="token function">sudo</span> systemctl restart apache2   <span class="token comment"># Reiniciamos el servicio</span>
+<span class="token function">sudo</span> systemctl <span class="token function">enable</span> apache2    <span class="token comment"># Habilitamos el inicio automático al arrancar</span>
+<span class="token function">sudo</span> systemctl disable apache2   <span class="token comment"># Deshabilitamos el inicio automático si se necesita</span>
+
+</code></pre>
+<hr>
+<!-- documentar &#34;/etc/apache2/&#34; y subcarpetas -->
+<p>Los archivos de configuracion de Apache se encuentran en <strong><code>/etc/apache2/</code></strong>:</p>
+<ul>
+<li><strong><code>apache2.conf</code></strong>: es el archivo de configuracion inicial. Es el primer fichero que se ejecuta cuando arrancamos el servidor.</li>
+<li><strong><code>ports.conf</code></strong>: donde se definen los puertos en los que Apache escuchará las conexiones</li>
+<li><strong><code>mods-available/</code></strong>: Contiene todos los módulos de Apache que están instalados en el sistema.</li>
+<li><strong><code>mods-enabled/</code></strong>: Contiene enlaces simbólicos a los módulos de mods-available/ que están activos, es decir, cargados y funcionando en el servidor.</li>
+<li><strong><code>conf-available/</code></strong>: Almacena archivos de configuración global mediante enlaces simbólicos influyendo en la configuración general del servidor.</li>
+<li><strong><code>conf-enabled/</code></strong>: Contiene enlaces simbólicos a los archivos de conf-available/ que están activos, aplicando su configuración al servidor.</li>
+<li><strong><code>sites-available/</code></strong>: Guarda archivos de configuración de sitios virtuales mediante enlaces simbólicos, permitiendo configurar diferentes sitios alojados en el mismo servidor</li>
+<li><strong><code>sites-enabled/</code></strong>: Contiene enlaces simbólicos a los archivos de sites-available/ que están activos, habilitando los sitios virtuales correspondientes.</li>
+</ul>
+<hr>
+<p>Para comprobar que los cambios en la documentacion funcionnan correctamente usamos:</p>
+<pre class=" language-bash"><code class="prism  language-bash"><span class="token function">sudo</span> apache2ctl configtest
+</code></pre>
+<h5 id="virtual-hosts">Virtual Hosts</h5>
+<h5 id="permisos-y-usuarios">Permisos y usuarios</h5>
+<blockquote>
+<ul>
+<li class="task-list-item"><input type="checkbox" class="task-list-item-checkbox" checked="true" disabled=""> operadorweb/paso</li>
+<li class="task-list-item"><input type="checkbox" class="task-list-item-checkbox" checked="true" disabled=""> operadorweb2/paso</li>
+<li class="task-list-item"><input type="checkbox" class="task-list-item-checkbox" checked="true" disabled=""> operadorweb3/paso</li>
+</ul>
+</blockquote>
+<p>Creamos un usuario llamado <code>operadorweb</code> que tenga el grupo <code>www-data</code>.</p>
+<pre class=" language-bash"><code class="prism  language-bash"><span class="token comment"># Creamos el usuario</span>
+<span class="token function">sudo</span> <span class="token function">useradd</span> -m -d /var/www/html/ -s /bin/bash -G www-data operadorweb
+
+<span class="token comment"># Le ponemos contraseña</span>
+<span class="token function">sudo</span> <span class="token function">passwd</span> operadorweb
+
+
+<span class="token comment"># Cambiamos el propietario de su carpeta home con:</span>
+<span class="token function">sudo</span> <span class="token function">chown</span> -R operadorweb:www-data /var/www/html/
+
+<span class="token comment"># Y los permisos con:</span>
+<span class="token function">sudo</span> <span class="token function">chmod</span> -R 775 /var/www/html
+</code></pre>
+<p>Y habilitamos el puerto 80 en el UFW si no esta ya.</p>
+<h4 id="php-fpm">1.1.3 PHP-FPM</h4>
+<h5 id="instalacion-3">Instalacion</h5>
+<pre class=" language-bash"><code class="prism  language-bash"><span class="token comment"># --- Actualizar paquetes y preparar el sistema ---</span>
+<span class="token comment"># Se asegura que todos los paquetes estén actualizados y se instalan</span>
+<span class="token comment"># herramientas necesarias para añadir repositorios externos.</span>
+<span class="token function">sudo</span> apt update
+<span class="token function">sudo</span> apt <span class="token function">install</span> software-properties-common -y
+
+<span class="token comment"># --- Añadir repositorio de PHP actualizado ---</span>
+<span class="token comment"># Se añade el PPA de Ondřej Surý para poder instalar versiones recientes</span>
+<span class="token comment"># de PHP y se verifica que el repositorio se haya añadido correctamente.</span>
+<span class="token function">sudo</span> add-apt-repository ppa:ondrej/php -y
+<span class="token function">ls</span> /etc/apt/sources.list.d/ <span class="token operator">|</span> <span class="token function">grep</span> ondrej
+<span class="token function">sudo</span> apt update
+
+<span class="token comment"># --- Instalar PHP 8.3 y PHP-FPM ---</span>
+<span class="token comment"># Se instala PHP 8.3 junto con FPM, que permite que Apache gestione PHP</span>
+<span class="token comment"># de forma más eficiente y segura que el módulo tradicional.</span>
+<span class="token function">sudo</span> apt <span class="token function">install</span> libapache2-mod-php8.3 php8.3-fpm -y
+
+<span class="token comment"># --- Configurar Apache para usar PHP-FPM ---</span>
+<span class="token comment"># Se habilita el proxy para PHP-FPM, se desactiva mpm_prefork y el módulo</span>
+<span class="token comment"># PHP tradicional y se activa mpm_event, optimizando Apache para trabajar</span>
+<span class="token comment"># con PHP-FPM.</span>
+<span class="token function">sudo</span> a2enmod proxy_fcgi
+<span class="token function">sudo</span> a2dismod mpm_prefork
+<span class="token function">sudo</span> a2dismod php8.3
+<span class="token function">sudo</span> a2dismod mpm_prefork
+<span class="token function">sudo</span> a2enmod mpm_event proxy_fcgi
+<span class="token function">sudo</span> a2enconf php8.3-fpm
+
+<span class="token comment"># --- Reiniciar y recargar Apache ---</span>
+<span class="token comment"># Se aplican todos los cambios de configuración reiniciando Apache y</span>
+<span class="token comment"># recargando servicios.</span>
+<span class="token function">sudo</span> systemctl restart apache2
+<span class="token function">sudo</span> systemctl reload apache2
+</code></pre>
+<h5 id="configuracion-4">Configuracion</h5>
+<p>En <code>/etc/php/8.3/fpm</code> hacemos una copia de seguridad de <code>php.ini</code> y despues lo editamos cambiando estos valores:</p>
+<p><img src="./images/php/php.ini_errors.png" alt=""><br>
+<img src="./images/php/php.ini_memory.png" alt=""></p>
+<p>Y reiniciamos el servicio para aplicar los cambios a la configuracion con:</p>
+<pre class=" language-bash"><code class="prism  language-bash"><span class="token function">sudo</span> systemctl restart php8.3-fpm
+</code></pre>
+<h4 id="mysql">1.1.4 MySQL</h4>
+<h4 id="xdebug">1.1.5 XDebug</h4>
+<h4 id="dns">1.1.6 DNS</h4>
+<h4 id="sftp">1.1.7 SFTP</h4>
+<h4 id="apache-tomcat">1.1.8 Apache Tomcat</h4>
+<h4 id="ldap">1.1.9 LDAP</h4>
+<h3 id="windows-11">1.2 Windows 11</h3>
+<h4 id="configuración-inicial-1">1.2.1 <strong>Configuración inicial</strong></h4>
+<h5 id="nombre-y-configuración-de-red-1"><strong>Nombre y configuración de red</strong></h5>
+<h5 id="cuentas-administradoras-1"><strong>Cuentas administradoras</strong></h5>
+<h4 id="navegadores">1.2.2 <strong>Navegadores</strong></h4>
+<h4 id="movaxterm">1.2.3 <strong>MovaXterm</strong></h4>
+<p>Para crear una nueva sesion de usuario le damos aqui:</p>
+<p><img src="./images/MovaXterm/menuSessionButton.png" alt="alt text"></p>
+<p>Se abrira un menu para elegir el tipo de conexion.<br>
+Elegiremos SSH y pondremos la IP del servidor, marcamos la casilla y ponemos nuestro uruario.</p>
+<p><img src="./images/MovaXterm/CreateNewSessionSSH.png" alt="alt text"></p>
+<p>Al darle a Ok nos pedira la contraseña. Se la ponemos y ya estaria creada la sesion para poder administrar el servidor.</p>
+<h4 id="netbeans">1.2.4 <strong>Netbeans</strong></h4>
+<h5 id="creacion-de-proyectos">Creacion de proyectos</h5>
+<p>Clicamos en el boton de crear un nuevo proyecto.</p>
+<p><img src="./images/netbeans/crear/menuNewProjectButton.png" alt="Seleccion crear nuevo proyecto"></p>
+<hr>
+<p>Seleccionamos el tipo de proywcto:</p>
+<p><img src="./images/netbeans/crear/menuProjectType.png" alt=""></p>
+<hr>
+<p>Seleccionamos el nombre del proyecto y en la carpeta donde se va a guardar</p>
+<p><img src="./images/netbeans/crear/projectNameAndLocation.png" alt="alt text"></p>
+<hr>
+<p>Seleccionamos la direccion de nuestro servidor y a que carpeta se subiran los archivos</p>
+<p><img src="./images/netbeans/crear/projectRemoteConnetion.png" alt="alt text"></p>
+<hr>
+<p>Confirmamos el mensaje que aparece y le damos a finalizar.</p>
+<p><img src="./images/netbeans/crear/project.png" alt="alt text"></p>
+<hr>
+<p>Y ya lo tenemos</p>
+<p><img src="./images/netbeans/crear/projectEnd.png" alt="alt text"></p>
+<h5 id="eliminacion-de-proyectos">Eliminacion de proyectos</h5>
+<p>Le damos click derecho al proyecto que queramos eliminar.</p>
+<p><img src="./images/netbeans/eliminar/rightClickMenu.png" alt="alt text"></p>
+<p>Una vez le damos, nos preguntara si queremos tambien eliminar todos los archivos (locales). Lo seleccionamos si queremos y le damos a “Yes”. Para que se elimine</p>
+<h5 id="informacion-del-ide">Informacion del IDE</h5>
+<blockquote>
+<p><strong>Pagina Oficial</strong>: <a href="https://netbeans.apache.org/">https://netbeans.apache.org/</a> <br>
+<strong>Version</strong>: 20 <br>
+<strong>Link Descarga Version</strong>: <a href="https://netbeans.apache.org/front/main/download/nb20/">https://netbeans.apache.org/front/main/download/nb20/</a> <br>
+<strong>Modulos Instalados</strong>: 0</p>
+</blockquote>
+<h4 id="visual-studio-code">1.2.5 <strong>Visual Studio Code</strong></h4>
+<h2 id="github">2. GitHub</h2>
+<h2 id="entorno-de-explotación">3.Entorno de Explotación</h2>
+<hr>
+<blockquote>
+<p><strong>Jesús Temprano Gallego</strong><br>
+Curso: 2025/2026<br>
+2º Curso CFGS Desarrollo de Aplicaciones Web<br>
+Despliegue de aplicaciones web</p>
+</blockquote>
+</div>
+</body>
+
+</html>
