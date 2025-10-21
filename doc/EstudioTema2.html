@@ -265,6 +265,8 @@ resolvectl  <span class="token comment"># Para ver el DNS</span>
 <pre class=" language-bash"><code class="prism  language-bash"><span class="token function">cat</span> /etc/apache2/apache2.conf   <span class="token comment"># Mostramos la configuración principal</span>
 <span class="token function">cat</span> /etc/apache2/sites-available/000-default.conf  <span class="token comment"># Configuración del sitio por defecto</span>
 </code></pre>
+<p>Cambiamos el <code>None</code> por <code>All</code>, para poder modificar los archivos <strong><code>.htaccess</code></strong><br>
+<img src="./images/apache/apacheAllowOverride.png" alt="alt text"></p>
 <p>Para aplicar los cambios despues de editar usamos:</p>
 <pre class=" language-bash"><code class="prism  language-bash"><span class="token function">sudo</span> apache2ctl configtest      <span class="token comment"># Comprobamos que no de errores = "Syntax OK"</span>
 <span class="token function">sudo</span> systemctl restart apache2  <span class="token comment"># Reiniciamos el servicio para aplicar cambios</span>
@@ -314,7 +316,7 @@ resolvectl  <span class="token comment"># Para ver el DNS</span>
 </blockquote>
 <p>Creamos un usuario llamado <code>operadorweb</code> que tenga el grupo <code>www-data</code>.</p>
 <pre class=" language-bash"><code class="prism  language-bash"><span class="token comment"># Creamos el usuario</span>
-<span class="token function">sudo</span> <span class="token function">useradd</span> -m -d /var/www/html/ -s /bin/bash -G www-data operadorweb
+<span class="token function">sudo</span> <span class="token function">useradd</span> -m -d /var/www/html/ -s /bin/bash -g www-data operadorweb
 
 <span class="token comment"># Le ponemos contraseña</span>
 <span class="token function">sudo</span> <span class="token function">passwd</span> operadorweb
