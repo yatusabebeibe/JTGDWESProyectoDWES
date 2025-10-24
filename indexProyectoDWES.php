@@ -88,7 +88,7 @@
         <h2>Desarrollo Web Entorno Servidor</h2>
         <ul>
             <a href="./doc/EstudioTema1.pdf" target="_blank"><li>UT1: Estudio teórico sobre el desarrollo de aplicaciones web del lado servidor</li></a>
-            <a href="./doc/EstudioTema2.html" target="_blank"><li>UT2: Construcción, documentación y prueba de los entornos de desarrollo y explotación para el desarrollo de aplicaciones web del lado servidor</li></a>
+            <a href="https://github.com/yatusabebeibe/JTGDAWProyectoDAW/blob/master/README.md" target="_blank"><li>UT2: Construcción, documentación y prueba de los entornos de desarrollo y explotación para el desarrollo de aplicaciones web del lado servidor</li></a>
             <a href="../JTGDWESProyectoTema3/indexProyectoTema3.php" target="_self"><li>UT3: Diseño y codificación de una página web dinámica sin persistencia utilizando PHP</li></a>
             <a href="#" target="_self"><li>UT4: Diseño y codificación de una página web dinámica con persistencia en MySQL</li></a>
             <a href="#" target="_self"><li>UT5: Control de acceso, identificación de usuarios, cookies, sesiones integrados en aplicaciones web dinámicas</li></a>
