@@ -85,7 +85,7 @@
     </header>
     <!-- 😼 -->
     <main>
-        <h2>ASIGNATURAS</h2>
+        <h2>Desarrollo Web Entorno Servidor</h2>
         <ul>
             <a href="./doc/EstudioTema1.pdf" target="_blank"><li>UT1: Estudio teórico sobre el desarrollo de aplicaciones web del lado servidor</li></a>
             <a href="./doc/EstudioTema2.html" target="_blank"><li>UT2: Construcción, documentación y prueba de los entornos de desarrollo y explotación para el desarrollo de aplicaciones web del lado servidor</li></a>
