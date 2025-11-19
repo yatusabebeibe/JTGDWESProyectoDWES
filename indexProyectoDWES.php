@@ -26,7 +26,7 @@
             <h3>UT2: Construcción, documentación y prueba de los entornos de desarrollo y explotación para el desarrollo de aplicaciones web del lado servidor</h3>
             <div>
                 <a href="https://github.com/yatusabebeibe/JTGDAWProyectoDAW/blob/master/README.md" target="_blank">Documentación</a>
-                <a href="#" target="_blank" toaviano>Estudio clases y funciones</a>
+                <a href="https://github.com/yatusabebeibe/JTGDWESProyectoDWES/blob/master/doc/EstudioClasesYFunciones.md" target="_blank">Estudio clases y funciones</a>
                 <a href="#" target="_blank" toaviano>Estudio framework</a>
             </div>
         </div>
