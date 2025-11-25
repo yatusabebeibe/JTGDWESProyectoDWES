@@ -1,20 +1,21 @@
-- [**SALIDA DE TEXTO**](#salida-de-texto)
-- [**TIPOS Y VARIABLES**](#tipos-y-variables)
-- [**CONSTANTES**](#constantes)
-- [**FECHAS Y HORAS**](#fechas-y-horas)
-- [**INCLUSIÓN DE ARCHIVOS**](#inclusión-de-archivos)
-- [**PUNTEROS DE ARRAYS**](#punteros-de-arrays)
-- [**MANEJO DE ARRAYS**](#manejo-de-arrays)
-- [**OTRAS FUNCIONES**](#otras-funciones)
+- [**Salida De Texto**](#salida-de-texto)
+- [**Tipos Y Variables**](#tipos-y-variables)
+- [**Constantes**](#constantes)
+- [**Fechas Y Horas**](#fechas-y-horas)
+- [**Inclusión De Archivos**](#inclusión-de-archivos)
+- [**Punteros De Arrays**](#punteros-de-arrays)
+- [**Manejo De Arrays**](#manejo-de-arrays)
+- [**Otras Funciones**](#otras-funciones)
 - [**PDO (Base de datos)**](#pdo-base-de-datos)
   - [**Transacciones**](#transacciones)
   - [**Consultas preparadas**](#consultas-preparadas)
 - [**JSON**](#json)
 - [**XML**](#xml)
-- [**CABECERAS HTTP**](#cabeceras-http)
+- [**Cabeceras HTTP**](#cabeceras-http)
+- [**DOMDocument (Manipulación de XML/HTML)**](#domdocument-manipulación-de-xmlhtml)
 
 
-## **SALIDA DE TEXTO**
+## **Salida De Texto**
 - **echo** → imprime texto.
 - **print** → imprime texto (devuelve 1).
 - **printf** → imprime con formato.
@@ -24,7 +25,7 @@
 
 ---
 
-## **TIPOS Y VARIABLES**
+## **Tipos Y Variables**
 - **gettype()** → devuelve el tipo.
 - **is_array()** → comprueba si es array.
 - **is_bool()** → comprueba si es booleano.
@@ -38,13 +39,13 @@
 
 ---
 
-## **CONSTANTES**
+## **Constantes**
 - **define()** → crea una constante.
 - **const()** → crea una constante (versión del lenguaje).
 
 ---
 
-## **FECHAS Y HORAS**
+## **Fechas Y Horas**
 - **DateTime (clase)** → manejar fechas de forma avanzada.
 - **date()** → formatea la fecha/hora actual.
 - **date_default_timezone_set()** → cambia la zona horaria.
@@ -52,7 +53,7 @@
 
 ---
 
-## **INCLUSIÓN DE ARCHIVOS**
+## **Inclusión De Archivos**
 - **include** → incluye un archivo (si falla, aviso).
 - **include_once** → igual pero solo una vez.
 - **require** → incluye un archivo (si falla, error fatal).
@@ -61,7 +62,7 @@
 
 ---
 
-## **PUNTEROS DE ARRAYS**
+## **Punteros De Arrays**
 - **reset()** → mueve al primer elemento.
 - **next()** → avanza uno.
 - **prev()** → retrocede uno.
@@ -71,7 +72,7 @@
 
 ---
 
-## **MANEJO DE ARRAYS**
+## **Manejo De Arrays**
 - **array()** → crear un array.
 - **unset()** → eliminar un índice.
 - **array_values()** → devuelve solo los valores.
@@ -83,7 +84,7 @@
 
 ---
 
-## **OTRAS FUNCIONES**
+## **Otras Funciones**
 - **highlight_file()** → muestra un archivo con colores.
 - **show_source()** → igual que highlight_file().
 - **setlocale()** → cambia la configuración regional.
@@ -93,6 +94,7 @@
 
 ## **PDO (Base de datos)**
 - **PDO (clase)** → conexión a base de datos.
+- **PDOStatement (clase)** → representa una sentencia preparada y sus resultados.
 - **PDOException (clase)** → errores de PDO.
 - **getAttribute()** → obtiene configuración del PDO.
 - **setAttribute()** → cambia configuración del PDO.
@@ -127,5 +129,10 @@
 
 ---
 
-## **CABECERAS HTTP**
+## **Cabeceras HTTP**
 - **header()** → enviar cabeceras (redirecciones, tipo de contenido, etc.).
+
+---
+
+## **DOMDocument (Manipulación de XML/HTML)**
+- **DOMDocument (clase)** → representa un documento XML/HTML y permite manipularlo.
