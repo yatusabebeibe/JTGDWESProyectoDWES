@@ -94,6 +94,7 @@
 
 ## **PDO (Base de datos)**
 - **PDO (clase)** → conexión a base de datos.
+- **PDOStatement (clase)** → representa una sentencia preparada y sus resultados.
 - **PDOException (clase)** → errores de PDO.
 - **getAttribute()** → obtiene configuración del PDO.
 - **setAttribute()** → cambia configuración del PDO.
@@ -131,3 +132,7 @@
 ## **Cabeceras HTTP**
 - **header()** → enviar cabeceras (redirecciones, tipo de contenido, etc.).
 
+---
+
+## **DOMDocument (Manipulación de XML/HTML)**
+- **DOMDocument (clase)** → representa un documento XML/HTML y permite manipularlo.
