@@ -19,7 +19,7 @@
             <h3>UT1: Estudio teórico sobre el desarrollo de aplicaciones web del lado servidor</h3>
             <div>
                 <a href="./doc/EstudioTema1.pdf" target="_blank">Estudio ejercicios</a>
-                <a href="#" target="_blank" toaviano>Estudio framework</a>
+                <a href="https://github.com/yatusabebeibe/JTGDWESProyectoDWES/blob/master/doc/EstudioFramework.md" target="_blank">Estudio teórico framework</a>
             </div>
         </div>
         <div>
@@ -27,7 +27,7 @@
             <div>
                 <a href="https://github.com/yatusabebeibe/JTGDAWProyectoDAW/blob/master/README.md" target="_blank">Documentación</a>
                 <a href="https://github.com/yatusabebeibe/JTGDWESProyectoDWES/blob/master/doc/EstudioClasesYFunciones.md" target="_blank">Estudio clases y funciones</a>
-                <a href="#" target="_blank" toaviano>Estudio framework</a>
+                <a href="https://github.com/yatusabebeibe/JTGDWESProyectoDWES/blob/master/doc/EstudioFramework.md#estudio-practico" target="_blank">Estudio practico framework</a>
             </div>
         </div>
         <div>
