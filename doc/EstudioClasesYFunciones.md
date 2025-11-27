@@ -20,6 +20,31 @@
     - [**DOMDocument (Manipulación de XML/HTML)**](#domdocument-manipulación-de-xmlhtml)
 
 ## **Mas importantes**
+
+| Función               | Explicación                                                                          | Retorna   |
+| --------------------- | ------------------------------------------------------------------------------------ | --------- |
+| `is_null()`           | Comprueba si una variable es **exactamente** `NULL`                                  | bool      |
+| `empty()`             | Comprueba si una variable está vacía (`""`, `0`, `null`, `false`, `[]`, etc.)        | bool      |
+| `isset()`             | Comprueba si una variable **existe** y **no** es `NULL`                              | bool      |
+| `date()`              | Genera una fecha/hora formateada según el formato que indiques                       | string    |
+| `var_dump()`          | Muestra el tipo de dato y el valor con todo detalle                                  | void      |
+| `nl2br()`             | Convierte saltos de línea `\n` en etiquetas `<br>`                                   | string    |
+| `htmlspecialchars()`  | Convierte caracteres especiales en entidades HTML para evitar problemas de seguridad | string    |
+| `list()`              | Extrae valores de un array asignándolos a variables en orden                         | array     |
+| `json_encode()`       | Convierte un dato de PHP a formato JSON                                              | string    |
+| `json_decode()`       | Convierte texto JSON a una variable PHP                                              | mixed     |
+| `file_put_contents()` | Escribe datos en un archivo (lo crea si no existe)                                   | int|false |
+| `basename()`          | Obtiene solo el nombre de un archivo a partir de su ruta                             | string    |
+| `header()`            | Envía una cabecera HTTP al navegador (redirecciones, tipo de contenido, etc.)        | void      |
+
+| Clase          | Explicación                                                           | Métodos clave                                              |
+| -------------- | --------------------------------------------------------------------- | ---------------------------------------------------------- |
+| `DateTime`     | Permite crear, modificar y formatear fechas y horas de forma avanzada | `format()`, `modify()`, `add()`, `diff()`                  |
+| `PDO`          | Maneja la conexión a una base de datos y operaciones principales      | `prepare()`, `query()`, `exec()`, `beginTransaction()`     |
+| `PDOStatement` | Representa una consulta preparada lista para ejecutar                 | `execute()`, `fetch()`, `fetchAll()`, `rowCount()`         |
+| `PDOException` | Excepción que se lanza cuando ocurre un error con PDO                 | `getMessage()`, `getCode()`                                |
+| `DOMDocument`  | Permite crear, leer y modificar documentos XML o HTML                 | `load()`, `loadHTML()`, `save()`, `getElementsByTagName()` |
+
 ## **General**
 
 ### **Salida De Texto**
