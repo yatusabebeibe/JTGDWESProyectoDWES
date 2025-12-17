@@ -52,6 +52,7 @@
         <div>
             <h3>UT6: Programación Orientada a Objetos, Modelo Vista Controlador, Aplicaciones multicapa</h3>
             <div>
+                <a href="../JTGDWESProyectoLoginLogoff/index.php" target="_self">Login Logoff</a>
                 <a href="#" target="_self" toaviano></a>
             </div>
         </div>
@@ -65,11 +66,17 @@
             <h3>UT8: Desarrollo de aplicaciones web híbridas</h3>
             <div>
                 <a href="#" target="_self" toaviano></a>
+                <a href="../JTGDAWVentas/" target="_blank">JTGDAWVentas</a>
             </div>
         </div>
     </main>
     <!-- 😼 -->
-    <footer><a href="../../" target="_self">Jesús Temprano Gallego</a> | 30/09/2025</footer>
+    <footer>
+        <span><a href="https://github.com/yatusabebeibe/JTGDWESProyectoDWES/" target="_blank">
+            <img src="./webroot/images/github.svg">
+        </a></span>
+        <p><a href="../../" target="_self">Jesús Temprano Gallego</a> | 17/12/2025</p>
+    </footer>
     <!-- 😼 -->
     <!-- muxixima glasia alvelto pol el marivilliosiximo achetemeele que te paxo chatgepete -->
 </body>
