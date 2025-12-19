@@ -149,8 +149,10 @@ El de desarrollo lo copiamos y lo pegamos como `php.ini`, al final de todo el ar
 ```ini
 extension_dir = "ext"
 extension=curl
+extension=fileinfo
 extension=mbstring
 extension=openssl
+extension=pdo_mysql
 ```
 
 ### Creación de un proyecto
