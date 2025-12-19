@@ -105,7 +105,9 @@ Para usar Laravel tenemos que instalar PHP, Composer, el propio Laravel para pod
 
 Abrimos una terminal y ponemos:
 ```powershell
-winget install PHP.PHP.8.4 --scope machine
+winget install PHP.PHP.8.4 # Para el usuario actual
+# o
+winget install PHP.PHP.8.4 --scope machine # Para todos los usuarios
 ```
 (uso PHP8.4 porque actualmente es [la ultima version de PHP compatible con Laravel 12 (la ultima version actualmente)](https://laravel.com/docs/12.x/releases#:~:text=12,-8%2E2)).
 
