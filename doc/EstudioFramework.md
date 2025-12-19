@@ -77,15 +77,15 @@ Ayuda especialmente en tareas típicas y que se repiten mucho en el desarrollo.
 - `routes/`: Define las rutas de la aplicación en archivos como web.php y api.php.
 - `storage/`: Contiene los archivos generados por la aplicación, como logs, caché de Blade y sesiones.
 - `tests/`: Contiene los archivos para pruebas de unidad y de integración.
-- `vendor/`: Contiene todas las dependencias del proyecto, gestionadas por Composer. 
+- `vendor/`: Contiene todas las dependencias del proyecto, gestionadas por Composer.
 
 ### Referencias
 
-Tutorial oficial: https://laravel.com/learn/getting-started-with-laravel 
+Tutorial oficial: https://laravel.com/learn/getting-started-with-laravel
 
-Documentación oficial: https://laravel.com/docs/12.x 
+Documentación oficial: https://laravel.com/docs/12.x
 
-Curso Laravel YouTube: https://www.youtube.com/playlist?list=PLZ2ovOgdI-kVtF2yQ2kiZetWWTmOQoUSG 
+Curso Laravel YouTube: https://www.youtube.com/playlist?list=PLZ2ovOgdI-kVtF2yQ2kiZetWWTmOQoUSG
 
 
 
