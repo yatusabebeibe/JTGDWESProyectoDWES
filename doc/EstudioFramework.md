@@ -94,6 +94,9 @@ Curso Laravel YouTube: https://www.youtube.com/playlist?list=PLZ2ovOgdI-kVtF2yQ2
 ### Primeros pasos (Preparar el entorno)
 
 #### Instalación
+
+Para usar Laravel tenemos que instalar PHP, Composer y el propio Laravel para poder crear la aplicacion.
+
 #### Configuración
 
 ### Creación de un proyecto
