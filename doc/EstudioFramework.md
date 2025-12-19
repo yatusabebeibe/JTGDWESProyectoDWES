@@ -15,6 +15,7 @@
     - [Primeros pasos (Preparar el entorno)](#primeros-pasos-preparar-el-entorno)
       - [Instalación](#instalación)
         - [PHP](#php)
+        - [Composer](#composer)
       - [Configuración](#configuración)
     - [Creación de un proyecto](#creación-de-un-proyecto)
 
@@ -109,6 +110,12 @@ winget install PHP.PHP.8.4 --scope machine
 Esto instalara PHP 8.4 automaticamente y lo añadira a PATH.
 
 Despues, lo [configuramos](#configuración).
+
+##### Composer
+
+Vamos a https://getcomposer.org/download/ y, descargamos y ejecutamos "***Composer-Setup.exe***".
+
+Le damos a instalar para todos o solo este usuario segun queramos. En las opciones de instalacion le damos a siguiente hasta instalar.
 
 #### Configuración
 
