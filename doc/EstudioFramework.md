@@ -16,6 +16,7 @@
       - [Instalación](#instalación)
         - [PHP](#php)
         - [Composer](#composer)
+        - [Laravel](#laravel)
       - [Configuración](#configuración)
     - [Creación de un proyecto](#creación-de-un-proyecto)
 
@@ -116,6 +117,15 @@ Despues, lo [configuramos](#configuración).
 Vamos a https://getcomposer.org/download/ y, descargamos y ejecutamos "***Composer-Setup.exe***".
 
 Le damos a instalar para todos o solo este usuario segun queramos. En las opciones de instalacion le damos a siguiente hasta instalar.
+
+##### Laravel
+
+Abrimos una nueva terminal para recargar los PATH, y ponemos:
+```powershell
+composer global require laravel/installer
+```
+
+Esto instalara Laravel y todas sus dependencias.
 
 #### Configuración
 
