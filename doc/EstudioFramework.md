@@ -156,3 +156,28 @@ extension=pdo_mysql
 ```
 
 ### Creación de un proyecto
+
+Para crear un proyecto, se haría por terminal haciendo algo tipo:
+```
+C:\...\proyectos> laravel new nombre_proyecto
+```
+Nos preguntara ***( yo he seleccionado )***:
+1. Que kit de inicio queremos usar. ***( El predeterminado: none )***
+2. Que framework para test preferimos. ***( El predeterminado: Pest )***
+3. Si queremos instalar "Laravel Boost" para programación con IA. ***( No )***
+4. *... [Se instalaran un montón de paquetes y dependencias] ...*
+5. Que base de datos usaremos. ***( mariadb )***
+6. Si queremos hacer las migraciones por defecto a la DB. ***( El predeterminado: yes )***
+7. *... [Se instalaran todavía mas paquetes y dependencias] ...*
+8. Si queremos hacer `npm install` y `npm run build`. ***( El predeterminado: yes )***
+
+Al terminar creara una carpeta con el nombre del proyecto que contenga todos los archivos y directorio iniciales.
+
+Hacemos:
+```bash
+cd nombre_proyecto  # Para ir al proyecto
+composer run dev    # Para iniciar el servidor web
+```
+
+Ahora, si vamos a http://localhost:8000/ podremos ver esta pagina:
+![imagen pagina inicio app por defecto](img/homePageDefaultApp.png)
