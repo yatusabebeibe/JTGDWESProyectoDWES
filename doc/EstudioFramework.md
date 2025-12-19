@@ -119,4 +119,19 @@ Le damos a instalar para todos o solo este usuario segun queramos. En las opcion
 
 #### Configuración
 
+Para ver donde esta y configurar el archivo de php.ini podemos usar:
+```powershell
+(Get-Command php).Source
+```
+
+Por defecto el archivo tiene dos php.ini: `php.ini-development` y `php.ini-production`.
+
+El de desarrollo lo copiamos y lo pegamos como `php.ini`, al final de todo el archivo ponemos:
+```ini
+extension_dir = "ext"
+extension=curl
+extension=mbstring
+extension=openssl
+```
+
 ### Creación de un proyecto
