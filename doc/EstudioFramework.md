@@ -99,7 +99,7 @@ Curso Laravel YouTube: https://www.youtube.com/playlist?list=PLZ2ovOgdI-kVtF2yQ2
 
 #### Instalación
 
-Para usar Laravel tenemos que instalar PHP, Composer, el propio Laravel para poder crear la aplicacion y NodeJS y npm para compilar los archivos del frontend.
+Para usar Laravel tenemos que instalar PHP, Composer, el propio Laravel para poder crear la aplicación y NodeJS y npm para compilar los archivos del frontend.
 
 ##### PHP
 
@@ -109,17 +109,17 @@ winget install PHP.PHP.8.4 # Para el usuario actual
 # o
 winget install PHP.PHP.8.4 --scope machine # Para todos los usuarios
 ```
-(uso PHP8.4 porque actualmente es [la ultima version de PHP compatible con Laravel 12 (la ultima version actualmente)](https://laravel.com/docs/12.x/releases#:~:text=12,-8%2E2)).
+(uso PHP8.4 porque actualmente es [la ultima versión de PHP compatible con Laravel 12 (la ultima versión actualmente)](https://laravel.com/docs/12.x/releases#:~:text=12,-8%2E2)).
 
-Esto instalara PHP 8.4 automaticamente y lo añadira a PATH.
+Esto instalara PHP 8.4 automáticamente y lo añadirá a PATH.
 
-Despues, lo [configuramos](#configuración).
+Después, lo [configuramos](#configuración).
 
 ##### Composer
 
 Vamos a https://getcomposer.org/download/ y, descargamos y ejecutamos "***Composer-Setup.exe***".
 
-Le damos a instalar para todos o solo este usuario segun queramos. En las opciones de instalacion le damos a siguiente hasta instalar.
+Le damos a instalar para todos o solo este usuario según queramos. En las opciones de instalación le damos a siguiente hasta instalar.
 
 ##### Laravel
 
@@ -132,7 +132,7 @@ Esto instalara Laravel y todas sus dependencias.
 
 ##### NodeJS y npm
 
-Vamos a https://nodejs.org/es/download y abajo, le damos al boton para descargar el `.msi`.
+Vamos a https://nodejs.org/es/download y abajo, le damos al botón para descargar el `.msi`.
 
 Lo ejecutamos, le damos a siguiente, aceptamos la licencia, y le damos a siguiente hasta instalar.
 
