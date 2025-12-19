@@ -17,6 +17,7 @@
         - [PHP](#php)
         - [Composer](#composer)
         - [Laravel](#laravel)
+        - [NodeJS y npm](#nodejs-y-npm)
       - [Configuración](#configuración)
     - [Creación de un proyecto](#creación-de-un-proyecto)
 
@@ -98,7 +99,7 @@ Curso Laravel YouTube: https://www.youtube.com/playlist?list=PLZ2ovOgdI-kVtF2yQ2
 
 #### Instalación
 
-Para usar Laravel tenemos que instalar PHP, Composer y el propio Laravel para poder crear la aplicacion.
+Para usar Laravel tenemos que instalar PHP, Composer, el propio Laravel para poder crear la aplicacion y NodeJS y npm para compilar los archivos del frontend.
 
 ##### PHP
 
@@ -126,6 +127,12 @@ composer global require laravel/installer
 ```
 
 Esto instalara Laravel y todas sus dependencias.
+
+##### NodeJS y npm
+
+Vamos a https://nodejs.org/es/download y abajo, le damos al boton para descargar el `.msi`.
+
+Lo ejecutamos, le damos a siguiente, aceptamos la licencia, y le damos a siguiente hasta instalar.
 
 #### Configuración
 
