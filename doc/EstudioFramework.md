@@ -14,6 +14,7 @@
   - [**Estudio practico**](#estudio-practico)
     - [Primeros pasos (Preparar el entorno)](#primeros-pasos-preparar-el-entorno)
       - [Instalación](#instalación)
+        - [PHP](#php)
       - [Configuración](#configuración)
     - [Creación de un proyecto](#creación-de-un-proyecto)
 
@@ -96,6 +97,18 @@ Curso Laravel YouTube: https://www.youtube.com/playlist?list=PLZ2ovOgdI-kVtF2yQ2
 #### Instalación
 
 Para usar Laravel tenemos que instalar PHP, Composer y el propio Laravel para poder crear la aplicacion.
+
+##### PHP
+
+Abrimos una terminal y ponemos:
+```powershell
+winget install PHP.PHP.8.4 --scope machine
+```
+(uso PHP8.4 porque actualmente es [la ultima version de PHP compatible con Laravel 12 (la ultima version actualmente)](https://laravel.com/docs/12.x/releases#:~:text=12,-8%2E2)).
+
+Esto instalara PHP 8.4 automaticamente y lo añadira a PATH.
+
+Despues, lo [configuramos](#configuración).
 
 #### Configuración
 
