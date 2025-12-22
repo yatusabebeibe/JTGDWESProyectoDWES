@@ -181,3 +181,11 @@ composer run dev    # Para iniciar el servidor web
 
 Ahora, si vamos a http://localhost:8000/ podremos ver esta pagina:
 ![imagen pagina inicio app por defecto](img/homePageDefaultApp.png)
+
+### Configurar el proyecto
+
+Para configurar el proyecto están el archivo `.env` que hay el la raíz del proyecto y los archivos de la carpeta `/config`.
+
+El `.env` es el archivo de config principal. Ahí podemos configurar varias cosas. *(Los mas importantes siendo el **nombre de la aplicación**, el **entorno de desarrollo**, la **clave para encriptar datos**, si mostraremos **mensajes de error** en la app, la **url de la app** y la **DB que usaremos con su usuario y contraseña**)*
+
+Para configurar la zona horaria, en la carpeta `/config` el archivo `app.php` buscamos "***timezone***", y lo ponemos en "***Europe/Madrid***".
