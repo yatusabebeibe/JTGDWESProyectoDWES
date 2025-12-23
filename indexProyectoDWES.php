@@ -52,7 +52,7 @@
         <div>
             <h3>UT6: Programación Orientada a Objetos, Modelo Vista Controlador, Aplicaciones multicapa</h3>
             <div>
-                <a href="../JTGDWESProyectoLoginLogoff/index.php" target="_self">Login Logoff</a>
+                <a href="../JTGDWESProyectoLoginLogoff/indexLoginLogoff.php" target="_self">Login Logoff</a>
                 <a href="#" target="_self" toaviano></a>
             </div>
         </div>
