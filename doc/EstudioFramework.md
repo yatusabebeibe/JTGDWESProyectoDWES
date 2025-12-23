@@ -20,6 +20,8 @@
         - [NodeJS y npm](#nodejs-y-npm)
       - [Configuración](#configuración)
     - [Creación de un proyecto](#creación-de-un-proyecto)
+    - [Configurar el proyecto](#configurar-el-proyecto)
+    - [Artisan](#artisan)
 
 
 ## **Estudio teórico**
@@ -189,3 +191,24 @@ Para configurar el proyecto están el archivo `.env` que hay el la raíz del pro
 El `.env` es el archivo de config principal. Ahí podemos configurar varias cosas. *(Los mas importantes siendo el **nombre de la aplicación**, el **entorno de desarrollo**, la **clave para encriptar datos**, si mostraremos **mensajes de error** en la app, la **url de la app** y la **DB que usaremos con su usuario y contraseña**)*
 
 Para configurar la zona horaria, en la carpeta `/config` el archivo `app.php` buscamos "***timezone***", y lo ponemos en "***Europe/Madrid***".
+
+### Artisan
+
+¿Qué es artisan? Es la salvación, la segunda venida de Jesucristo y el 33% del poder de Ambrosio.
+
+Básicamente, todo lo que necesites hacer lo puedes hacer con artisan.
+
+Puedes iniciar un servidor web con:
+```bash
+php artisan serve
+```
+
+Crear vistas, modelos, controladores, componentes y mas con:
+```bash
+php artisan make:<lo que quieras> <nombre que quieres que tenga>
+```
+
+Crear las tablas de la DB con:
+```bash
+php artisan migrate
+```
