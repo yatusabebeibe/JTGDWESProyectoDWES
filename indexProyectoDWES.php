@@ -66,6 +66,7 @@
             <h3>UT8: Desarrollo de aplicaciones web híbridas</h3>
             <div>
                 <a href="#" target="_self" toaviano></a>
+                <a href="../JTGDWESProyectoLaravel/" target="_blank">Proyecto Laravel</a>
                 <a href="../JTGDAWVentas/" target="_blank">JTGDAWVentas</a>
             </div>
         </div>
