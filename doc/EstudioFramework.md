@@ -14,8 +14,15 @@
   - [**Estudio practico**](#estudio-practico)
     - [Primeros pasos (Preparar el entorno)](#primeros-pasos-preparar-el-entorno)
       - [Instalación](#instalación)
+        - [PHP](#php)
+        - [Composer](#composer)
+        - [Laravel](#laravel)
+        - [NodeJS y npm](#nodejs-y-npm)
       - [Configuración](#configuración)
     - [Creación de un proyecto](#creación-de-un-proyecto)
+    - [Configurar el proyecto](#configurar-el-proyecto)
+    - [Artisan](#artisan)
+    - [Pasar la app a entorno explotación](#pasar-la-app-a-entorno-explotación)
 
 
 ## **Estudio teórico**
@@ -77,23 +84,163 @@ Ayuda especialmente en tareas típicas y que se repiten mucho en el desarrollo.
 - `routes/`: Define las rutas de la aplicación en archivos como web.php y api.php.
 - `storage/`: Contiene los archivos generados por la aplicación, como logs, caché de Blade y sesiones.
 - `tests/`: Contiene los archivos para pruebas de unidad y de integración.
-- `vendor/`: Contiene todas las dependencias del proyecto, gestionadas por Composer. 
+- `vendor/`: Contiene todas las dependencias del proyecto, gestionadas por Composer.
 
 ### Referencias
 
-Tutorial oficial: https://laravel.com/learn/getting-started-with-laravel 
+Tutorial oficial: https://laravel.com/learn/getting-started-with-laravel
 
-Documentación oficial: https://laravel.com/docs/12.x 
+Documentación oficial: https://laravel.com/docs/12.x
 
-Curso Laravel YouTube: https://www.youtube.com/playlist?list=PLZ2ovOgdI-kVtF2yQ2kiZetWWTmOQoUSG 
+Curso Laravel YouTube: https://www.youtube.com/playlist?list=PLZ2ovOgdI-kVtF2yQ2kiZetWWTmOQoUSG
 
 
 
 ## **Estudio practico**
 
+[**-> Link a la aplicación en explotación <-**](https://laravel.jesustemgal.ieslossauces.es/) \
+[**-> Link a su repositorio <-**](https://github.com/yatusabebeibe/proyectoLaravel/)
+
 ### Primeros pasos (Preparar el entorno)
 
 #### Instalación
+
+Para usar Laravel tenemos que instalar PHP, Composer, el propio Laravel para poder crear la aplicación y NodeJS y npm para compilar los archivos del frontend.
+
+##### PHP
+
+Abrimos una terminal y ponemos:
+```powershell
+winget install PHP.PHP.8.4 # Para el usuario actual
+# o
+winget install PHP.PHP.8.4 --scope machine # Para todos los usuarios
+```
+(uso PHP8.4 porque actualmente es [la ultima versión de PHP compatible con Laravel 12 (la ultima versión actualmente)](https://laravel.com/docs/12.x/releases#:~:text=12,-8%2E2)).
+
+Esto instalara PHP 8.4 automáticamente y lo añadirá a PATH.
+
+Después, lo [configuramos](#configuración).
+
+##### Composer
+
+Vamos a https://getcomposer.org/download/ y, descargamos y ejecutamos "***Composer-Setup.exe***".
+
+Le damos a instalar para todos o solo este usuario según queramos. En las opciones de instalación le damos a siguiente hasta instalar.
+
+##### Laravel
+
+Abrimos una nueva terminal para recargar los PATH, y ponemos:
+```powershell
+composer global require laravel/installer
+```
+
+Esto instalara Laravel y todas sus dependencias.
+
+##### NodeJS y npm
+
+Vamos a https://nodejs.org/es/download y abajo, le damos al botón para descargar el `.msi`.
+
+Lo ejecutamos, le damos a siguiente, aceptamos la licencia, y le damos a siguiente hasta instalar.
+
 #### Configuración
 
+Para ver donde esta y configurar el archivo de php.ini podemos usar:
+```powershell
+(Get-Command php).Source
+```
+
+Por defecto el archivo tiene dos php.ini: `php.ini-development` y `php.ini-production`.
+
+El de desarrollo lo copiamos y lo pegamos como `php.ini`, al final de todo el archivo ponemos:
+```ini
+extension_dir = "ext"
+extension=curl
+extension=fileinfo
+extension=mbstring
+extension=openssl
+extension=pdo_mysql
+```
+
 ### Creación de un proyecto
+
+Para crear un proyecto, se haría por terminal haciendo algo tipo:
+```
+C:\...\proyectos> laravel new nombre_proyecto
+```
+Nos preguntara ***( yo he seleccionado )***:
+1. Que kit de inicio queremos usar. ***( El predeterminado: none )***
+2. Que framework para test preferimos. ***( El predeterminado: Pest )***
+3. Si queremos instalar "Laravel Boost" para programación con IA. ***( No )***
+4. *... [Se instalaran un montón de paquetes y dependencias] ...*
+5. Que base de datos usaremos. ***( mariadb )***
+6. Si queremos hacer las migraciones por defecto a la DB. ***( El predeterminado: yes )***
+7. *... [Se instalaran todavía mas paquetes y dependencias] ...*
+8. Si queremos hacer `npm install` y `npm run build`. ***( El predeterminado: yes )***
+
+Al terminar creara una carpeta con el nombre del proyecto que contenga todos los archivos y directorio iniciales.
+
+Hacemos:
+```bash
+cd nombre_proyecto  # Para ir al proyecto
+composer run dev    # Para iniciar el servidor web
+```
+
+Ahora, si vamos a http://localhost:8000/ podremos ver esta pagina:
+![imagen pagina inicio app por defecto](img/homePageDefaultApp.png)
+
+### Configurar el proyecto
+
+Para configurar el proyecto están el archivo `.env` que hay el la raíz del proyecto y los archivos de la carpeta `/config`.
+
+El `.env` es el archivo de config principal. Ahí podemos configurar varias cosas. *(Los mas importantes siendo el **nombre de la aplicación**, el **entorno de desarrollo**, la **clave para encriptar datos**, si mostraremos **mensajes de error** en la app, la **url de la app** y la **DB que usaremos con su usuario y contraseña**)*
+
+Para configurar la zona horaria, en la carpeta `/config` el archivo `app.php` buscamos "***timezone***", y lo ponemos en "***Europe/Madrid***".
+
+### Artisan
+
+¿Qué es artisan? Es la salvación, la segunda venida de Jesucristo y el 33% del poder de Ambrosio.
+
+Básicamente, todo lo que necesites hacer lo puedes hacer con artisan.
+
+Puedes iniciar un servidor web con:
+```bash
+php artisan serve
+```
+
+Crear vistas, modelos, controladores, componentes y mas con:
+```bash
+php artisan make:<lo que quieras> <nombre que quieres que tenga>
+```
+
+Crear las tablas de la DB con:
+```bash
+php artisan migrate
+```
+
+### Pasar la app a entorno explotación
+
+Primero en el `.env` cambiamos esto:
+```ini
+APP_NAME=Laravel
+APP_ENV=local
+APP_DEBUG=true
+APP_URL=http://localhost:8000
+```
+Por esto:
+```ini
+APP_NAME=Laravel
+APP_ENV=production
+APP_DEBUG=false
+APP_URL=https://jesustemgal.ieslossauces.es/proyectoLaravel
+```
+*(Además de los datos de la conexión a la DB)*
+
+Después tenemos que subir la aplicación a GitHub si no lo habíamos hecho ya.
+
+Una vez este en un repositorio, podemos ir a nuestro Plex y creamos un subdominio y una DB asociada a el *(y ponemos los datos en el `.env`)*. \
+Después en la barra lateral de la izquierda entramos en el apartado "***Laravel***", le damos a instalar aplicación y seleccionamos el subdominio, elegimos instalar desde repo remoto, ponemos la url al repo y le damos a instalar aplicación.
+
+Una vez hecho esto, en el panel para Laravel que se nos abre; en la config le damos a edita `.env` y pegamos el nuestro de explotación, en el apartado de artisan hacemos un `migrate` para que se creen las tablas de la DB automáticamente y luego en el apartado de despliegue le damos a ***desplegar***. Si ahora vamos a la url del subdominio ya debería de funcionar.
+
+[**-> Link a la aplicación en explotación <-**](https://laravel.jesustemgal.ieslossauces.es/) \
+[**-> Link a su repositorio <-**](https://github.com/yatusabebeibe/proyectoLaravel/)

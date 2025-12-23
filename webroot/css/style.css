@@ -1,3 +1,4 @@
+* {box-sizing: border-box;}
 body {
     font-family: Arial, sans-serif;
     background: #f4f6f9;
@@ -41,7 +42,7 @@ main > div {
     }
     & > div > a {
         margin: auto; padding: 7px;
-        display: block; width: 100%; 
+        display: block; width: 100%;
         max-width: 96.5%;
         border-radius: 8px;
         font-weight: bold;
@@ -68,16 +69,41 @@ a {
     color: rgb(0, 125, 125);
     transition: 0.3s;
 }
+:root {
+    --altoHeader: 162px;
+    --altoFooter: 80px;
+}
 footer {
-    padding-top: 25px;
+    padding-top: 15px;
+    margin: auto;
     background-color: #459650;
-    
-    a {color: #7fffd4; text-decoration: aquamarine wavy underline;}
+    text-align: center;
+    height: var(--altoFooter);
+    color: white;
+
+    a {
+        text-decoration: aquamarine wavy underline;
+        color: aquamarine;
+        transition: 0.3s;
+    }
     a:hover {
         color: blue;
         mix-blend-mode: multiply;
         text-decoration: none;
     }
+    p {line-height: 30px; display: inline-block;}
+    span {margin-right: 15px;}
+    img {
+        display: inline-block;
+        height: 25px;
+        translate: 0 25%;
+        transition: all .3s ease-in-out;
+    }
+    span img:hover {transform: scale(1.15);}
+    span > a {text-decoration: none;}
+}
+main {
+    min-height: calc(100vh - var(--altoHeader) - var(--altoFooter) - 60px);
 }
 a[toaviano] {cursor: no-drop;}
 a[toaviano]:empty {display: none;}
