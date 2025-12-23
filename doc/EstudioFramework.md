@@ -22,6 +22,7 @@
     - [Creación de un proyecto](#creación-de-un-proyecto)
     - [Configurar el proyecto](#configurar-el-proyecto)
     - [Artisan](#artisan)
+    - [Pasar la app a entorno explotación](#pasar-la-app-a-entorno-explotación)
 
 
 ## **Estudio teórico**
@@ -212,3 +213,31 @@ Crear las tablas de la DB con:
 ```bash
 php artisan migrate
 ```
+
+### Pasar la app a entorno explotación
+
+Primero en el `.env` cambiamos esto:
+```ini
+APP_NAME=Laravel
+APP_ENV=local
+APP_DEBUG=true
+APP_URL=http://localhost:8000
+```
+Por esto:
+```ini
+APP_NAME=Laravel
+APP_ENV=production
+APP_DEBUG=false
+APP_URL=https://jesustemgal.ieslossauces.es/proyectoLaravel
+```
+*(Además de los datos de la conexión a la DB)*
+
+Después tenemos que subir la aplicación a GitHub si no lo habíamos hecho ya.
+
+Una vez este en un repositorio, podemos ir a nuestro Plex y creamos un subdominio y una DB asociada a el *(y ponemos los datos en el `.env`)*. \
+Después en la barra lateral de la izquierda entramos en el apartado "***Laravel***", le damos a instalar aplicación y seleccionamos el subdominio, elegimos instalar desde repo remoto, ponemos la url al repo y le damos a instalar aplicación.
+
+Una vez hecho esto, en el panel para Laravel que se nos abre, en el apartado de artisan hacemos un `migrate` para que se creen las tablas de la DB automáticamente y luego en el apartado de despliegue le damos a ***desplegar***. Si ahora vamos a la url del subdominio ya debería de funcionar.
+
+[**-> Link a la aplicación en explotación <-**](https://laravel.jesustemgal.ieslossauces.es/) \
+[**-> Link a su repositorio <-**](https://github.com/yatusabebeibe/proyectoLaravel/)
