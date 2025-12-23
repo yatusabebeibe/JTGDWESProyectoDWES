@@ -98,6 +98,9 @@ Curso Laravel YouTube: https://www.youtube.com/playlist?list=PLZ2ovOgdI-kVtF2yQ2
 
 ## **Estudio practico**
 
+[**-> Link a la aplicación en explotación <-**](https://laravel.jesustemgal.ieslossauces.es/) \
+[**-> Link a su repositorio <-**](https://github.com/yatusabebeibe/proyectoLaravel/)
+
 ### Primeros pasos (Preparar el entorno)
 
 #### Instalación
