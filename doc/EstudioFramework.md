@@ -237,7 +237,7 @@ Después tenemos que subir la aplicación a GitHub si no lo habíamos hecho ya.
 Una vez este en un repositorio, podemos ir a nuestro Plex y creamos un subdominio y una DB asociada a el *(y ponemos los datos en el `.env`)*. \
 Después en la barra lateral de la izquierda entramos en el apartado "***Laravel***", le damos a instalar aplicación y seleccionamos el subdominio, elegimos instalar desde repo remoto, ponemos la url al repo y le damos a instalar aplicación.
 
-Una vez hecho esto, en el panel para Laravel que se nos abre, en el apartado de artisan hacemos un `migrate` para que se creen las tablas de la DB automáticamente y luego en el apartado de despliegue le damos a ***desplegar***. Si ahora vamos a la url del subdominio ya debería de funcionar.
+Una vez hecho esto, en el panel para Laravel que se nos abre; en la config le damos a edita `.env` y pegamos el nuestro de explotación, en el apartado de artisan hacemos un `migrate` para que se creen las tablas de la DB automáticamente y luego en el apartado de despliegue le damos a ***desplegar***. Si ahora vamos a la url del subdominio ya debería de funcionar.
 
 [**-> Link a la aplicación en explotación <-**](https://laravel.jesustemgal.ieslossauces.es/) \
 [**-> Link a su repositorio <-**](https://github.com/yatusabebeibe/proyectoLaravel/)
