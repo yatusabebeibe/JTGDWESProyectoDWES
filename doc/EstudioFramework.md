@@ -237,6 +237,16 @@ Puedes ver todas las opciones que tiene usando:
 php artisan list
 ```
 
+### Como crear un primer proyecto simple
+
+#### Rutas
+#### Vistas
+#### Controladores
+#### Modelos
+#### Acceso a datos
+#### Formularios y validaciones
+#### Control de acceso
+
 ### Pasar la app a entorno explotación
 
 Primero en el `.env` cambiamos esto:
