@@ -298,6 +298,50 @@ Ejemplo siguiendo la ruta '/perfil' del ejemplo de rutas:
 ```
 
 #### Controladores
+En Laravel, los controladores se usan para organizar la lógica de las rutas y no tener todo el código dentro de `web.php`. \
+Se crean normalmente en la carpeta `app/Http/Controllers`.
+
+Podemos crear un controlador usando ``php artisan make:controller UsuarioController``.
+
+Ejemplo:
+```php
+namespace App\Http\Controllers;
+
+use Illuminate\Http\Request;
+use App\Models\Usuario; // Modelo para acceder a la base de datos
+
+class UsuarioController extends Controller
+{
+    // Muestra el formulario de login
+    public function mostrarLogin() {
+        return view('login');
+    }
+
+    // Procesar login
+    public function login(Request $request) {
+        $email = $request->input('email');
+        $password = $request->input('password');
+
+        // Ejemplo sencillo de búsqueda en la base de datos
+        $usuario = Usuario::where('email', $email)
+                          ->where('password', $password) // esto no es seguro, solo ejemplo
+                          ->first();
+
+        if ($usuario) {
+            return view('perfil', ['nombre' => $usuario->nombre]);
+        } else {
+            return back()->with('error', 'Credenciales incorrectas');
+        }
+    }
+
+    // Otro método de ejemplo para listar usuarios
+    public function listar() {
+        $usuarios = Usuario::all(); // Trae todos los usuarios
+        return view('usuarios', ['usuarios' => $usuarios]);
+    }
+}
+```
+
 #### Modelos
 #### Acceso a datos
 #### Formularios y validaciones
