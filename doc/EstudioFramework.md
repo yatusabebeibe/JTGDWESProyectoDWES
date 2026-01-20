@@ -104,7 +104,7 @@ Curso Laravel YouTube: https://www.youtube.com/playlist?list=PLZ2ovOgdI-kVtF2yQ2
 * **Sistema operativo explotación:** Ubuntu Server - *Usado en producción por estabilidad y seguridad.*
 * **Servidor web local:** Artisan - *Permite ejecutar y probar la aplicación rápidamente en desarrollo.*
 * **Servidor web explotación:** Apache - *Sirve la aplicación de forma estable en producción.*
-* **PHP:** 8.3 - *Usamos esta versión porque es compatible con la ultima versión de Laravel y es la ultima disponible en el servidor de explotación.*
+* **PHP:** 8.3 - *Usamos esta versión porque es compatible con la ultima versión de Laravel (12) y es la ultima disponible en el servidor de explotación.*
 * **Gestor de dependencias:** Composer - *Permite instalar y gestionar las librerías necesarias del proyecto de forma sencilla.*
 * **Base de datos:** MariaDB - *Sistema de gestión de bases de datos relacional, con entornos separados para pruebas y producción.*
 * **Framework:** Laravel - *Framework PHP que facilita la estructura, seguridad y mantenimiento de la aplicación.*
@@ -122,13 +122,13 @@ Para usar Laravel tenemos que instalar PHP, Composer, el propio Laravel para pod
 
 Abrimos una terminal y ponemos:
 ```powershell
-winget install PHP.PHP.8.4 # Para el usuario actual
+winget install PHP.PHP.8.3 # Para el usuario actual
 # o
-winget install PHP.PHP.8.4 --scope machine # Para todos los usuarios
+winget install PHP.PHP.8.3 --scope machine # Para todos los usuarios
 ```
-(uso PHP8.4 porque actualmente es [la ultima versión de PHP compatible con Laravel 12 (la ultima versión actualmente)](https://laravel.com/docs/12.x/releases#:~:text=12,-8%2E2)).
 
-Esto instalara PHP 8.4 automáticamente y lo añadirá a PATH.
+Esto instalara PHP 8.3 automáticamente y lo añadirá a PATH (hay que reiniciar la terminal para que haga efecto). \
+Puedes comprobar que es la versión correcta con `php -v`
 
 Después, lo [configuramos](#configuración).
 
@@ -152,6 +152,8 @@ Esto instalara Laravel y todas sus dependencias.
 Vamos a https://nodejs.org/es/download y abajo, le damos al botón para descargar el `.msi`.
 
 Lo ejecutamos, le damos a siguiente, aceptamos la licencia, y le damos a siguiente hasta instalar.
+
+Podemos comprobar que funciona haciendo `node -v` y `npm -v` respectivamente.
 
 #### Configuración
 
