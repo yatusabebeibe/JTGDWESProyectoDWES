@@ -240,6 +240,29 @@ php artisan list
 ### Como crear un primer proyecto simple
 
 #### Rutas
+En Laravel, las rutas son la forma de definir cómo tu aplicación responde a una solicitud HTTP específica. Se definen en los archivos de la carpeta `routes/`. \
+El archivo `web.php` es donde se guardan las rutas para la web.
+
+Ejemplo:
+```php
+use Illuminate\Support\Facades\Route;
+
+Route::get('/', function () {
+    return view('welcome'); // Muestra la vista 'welcome.blade.php'
+});
+
+Route::get('/hola', function () {
+    return '¡Hola Mundo!'; // Devuelve un texto plano
+});
+
+Route::post('/login', [UsuarioController::class, 'login']); // Llama al metodo login del controlador del usuario
+
+Route::get(...) // Responde a peticiones GET
+Route::post(...) // Responde a peticiones POST
+Route::put(...) // Responde a peticiones PUT
+// etc
+```
+
 #### Vistas
 #### Controladores
 #### Modelos
