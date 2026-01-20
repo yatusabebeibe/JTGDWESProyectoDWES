@@ -264,12 +264,12 @@ Route::get('/perfil', function () {
     return view('perfil', ['nombre' => $nombre]); // Pasa la variable $nombre a la vista
 });
 
-
 Route::get('/hola', function () {
     return '¡Hola Mundo!'; // Devuelve un texto plano
 });
 
-Route::post('/login', [UsuarioController::class, 'login']); // Llama al metodo login del controlador del usuario
+Route::get('/login', [UsuarioController::class, 'mostrarLogin']); // Llama al metodo mostrarLogin del controlador del usuario al hacer GET
+Route::post('/login', [UsuarioController::class, 'login']); // La misma ruta llama al metodo login del controlador del usuario al hacer POSR
 
 Route::get(...) // Responde a peticiones GET
 Route::post(...) // Responde a peticiones POST
