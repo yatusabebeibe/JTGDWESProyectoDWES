@@ -376,6 +376,59 @@ class Usuario extends Model
 ```
 
 #### Acceso a datos
+En Laravel, podemos acceder a la base de datos de varias formas usando Eloquent (ORM) o el Query Builder. \
+Se recomienda usar normalmente EloquentORM a no ser que necesites hacer cosas muy especificas
+
+Ejemplo Eloquent:
+```php
+use App\Models\Usuario;
+
+// Crear un usuario
+Usuario::create([
+    'nombre' => 'Jesús',
+    'email' => 'jesus@example.com',
+    'password' => '1234', // Laravel lo hashea automáticamente por el cast() del modelo
+]);
+
+// Obtener un usuario por email
+$usuario = Usuario::where('email', 'jesus@example.com')->first();
+
+// Actualizar un usuario
+$usuario->nombre = 'Jesús';
+$usuario->save();
+
+// Eliminar un usuario
+$usuario->delete();
+
+// Obtener todos los usuarios
+$usuarios = Usuario::all();
+```
+
+Ejemplo Query Builder:
+```php
+use Illuminate\Support\Facades\DB;
+
+// Insertar un usuario
+DB::table('usuarios')->insert([
+    'nombre' => 'Ana',
+    'email' => 'ana@example.com',
+    'password' => bcrypt('1234'), // Hash manual
+]);
+
+// Obtener usuarios
+$usuarios = DB::table('usuarios')->get();
+
+// Actualizar
+DB::table('usuarios')
+    ->where('email', 'ana@example.com')
+    ->update(['nombre' => 'Ana Pérez']);
+
+// Eliminar
+DB::table('usuarios')
+    ->where('email', 'ana@example.com')
+    ->delete();
+```
+
 #### Formularios y validaciones
 #### Control de acceso
 
