@@ -31,6 +31,7 @@
       - [Acceso a datos](#acceso-a-datos)
       - [Formularios y validaciones](#formularios-y-validaciones)
       - [Control de acceso](#control-de-acceso)
+      - [Migraciones](#migraciones)
     - [Pasar la app a entorno explotación](#pasar-la-app-a-entorno-explotación)
 
 
@@ -113,13 +114,20 @@ Curso Laravel YouTube: https://www.youtube.com/playlist?list=PLZ2ovOgdI-kVtF2yQ2
 * **Sistema operativo explotación:** Ubuntu Server - *Usado en producción por estabilidad y seguridad.*
 * **Servidor web local:** Artisan - *Permite ejecutar y probar la aplicación rápidamente en desarrollo.*
 * **Servidor web explotación:** Apache - *Sirve la aplicación de forma estable en producción.*
-* **PHP:** 8.3 - *Usamos esta versión porque es compatible con la ultima versión de Laravel (12) y es la ultima disponible en el servidor de explotación.*
+* **PHP:** 8.3 - *Usamos esta versión porque es compatible con la ultima versión de Laravel (12) y es la usada en nuestro servidor de explotación.*
 * **Gestor de dependencias:** Composer - *Permite instalar y gestionar las librerías necesarias del proyecto de forma sencilla.*
 * **Base de datos:** MariaDB - *Sistema de gestión de bases de datos relacional, con entornos separados para pruebas y producción.*
 * **Framework:** Laravel - *Framework PHP que facilita la estructura, seguridad y mantenimiento de la aplicación.*
 * **Gestión de versiones:** Git y GitHub - *Permite llevar un control de cambios del código y colaboración entre desarrolladores.*
 * **Editor:** VS Code - *Entorno de desarrollo ligero y configurable, con soporte para PHP y Laravel.*
+  - Extensiones usadas:
+    * [PHP Intelephense](https://marketplace.visualstudio.com/items?itemName=bmewburn.vscode-intelephense-client)
+    * [Laravel](https://marketplace.visualstudio.com/items?itemName=laravel.vscode-laravel)
+    * [Laravel Blade Snippets](https://marketplace.visualstudio.com/items?itemName=onecentlin.laravel-blade)
 * **Navegador:** Chrome y Firefox - *Usados para probar y depurar la aplicación, garantizando compatibilidad entre navegadores.*
+* **Plataforma de hosting:** Plesk - *Permite gestionar el servidor de producción y desplegar la aplicación fácilmente desde GitHub.*
+
+(*Para mas información sobre el entorno, ver la documentación de [Cliente De Desarrollo](https://github.com/yatusabebeibe/JTGDAWProyectoDAW/blob/master/ClienteDeDesarrollo.md) y [Entorno De Explotación](https://github.com/yatusabebeibe/JTGDAWProyectoDAW/blob/master/EntornoDeExplotacion.md) en el repositorio de mi proyecto DAW.*)
 
 ### Primeros pasos (Preparar el entorno)
 
@@ -248,6 +256,9 @@ php artisan list
 
 ### Como crear un primer proyecto simple
 
+Esta es una guía/tutorial para ver los conceptos básicos mas importantes de Laravel. \
+Después de leerla, podrás entender cómo funciona y crear tu propia aplicación con el.
+
 #### Rutas
 En Laravel, las rutas son la forma de definir cómo tu aplicación responde a una solicitud HTTP específica. Se definen en los archivos de la carpeta `routes/`. \
 El archivo `web.php` es donde se guardan las rutas para la web.
@@ -283,7 +294,7 @@ En Laravel, las vistas son los archivos que contienen el HTML de tu aplicación.
 Laravel utiliza Blade, su motor de plantillas, que permite usar plantillas dinámicas y directivas como **@if/@else**, **@foreach**, **@include**, etc. \
 También se le pueden pasar datos a la vista desde la ruta o el controlador.
 
-Ejemplo siguiendo la ruta '/perfil' del ejemplo de rutas:
+Ejemplo siguiendo la ruta '***/perfil***' del ejemplo de rutas:
 ```php
 <!DOCTYPE html>
 <html>
@@ -565,7 +576,7 @@ APP_ENV=production
 APP_DEBUG=false
 APP_URL=https://jesustemgal.ieslossauces.es/proyectoLaravel
 ```
-*(Además de los datos de la conexión a la DB)*
+*(Además de los datos de la conexión a la DB. Si no; si tu app se intenta conectar dará fallo)*
 
 Después tenemos que subir la aplicación a GitHub si no lo habíamos hecho ya.
 
