@@ -12,6 +12,7 @@
     - [Estructura de directorios](#estructura-de-directorios)
     - [Referencias](#referencias)
   - [**Estudio practico**](#estudio-practico)
+    - [Descripción del entrono](#descripción-del-entrono)
     - [Primeros pasos (Preparar el entorno)](#primeros-pasos-preparar-el-entorno)
       - [Instalación](#instalación)
         - [PHP](#php)
@@ -22,6 +23,14 @@
     - [Creación de un proyecto](#creación-de-un-proyecto)
     - [Configurar el proyecto](#configurar-el-proyecto)
     - [Artisan](#artisan)
+    - [Como crear un primer proyecto simple](#como-crear-un-primer-proyecto-simple)
+      - [Rutas](#rutas)
+      - [Vistas](#vistas)
+      - [Controladores](#controladores)
+      - [Modelos](#modelos)
+      - [Acceso a datos](#acceso-a-datos)
+      - [Formularios y validaciones](#formularios-y-validaciones)
+      - [Control de acceso](#control-de-acceso)
     - [Pasar la app a entorno explotación](#pasar-la-app-a-entorno-explotación)
 
 
