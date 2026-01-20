@@ -466,6 +466,39 @@ public function login(Request $request)
 ```
 
 #### Control de acceso
+Laravel gestiona el control de acceso de usuarios mediante el sistema de autenticación **`auth()`**. \
+Este sistema permite iniciar sesión, cerrar sesión y acceder a la información del usuario autenticado.
+
+Ejemplo (iniciar sesión):
+```php
+$esUsuarioValido
+ = auth()->guard()->attempt([ // Si es correcto, tambien crea la sesión del usuario.
+    'name' => $camposRecibidos['nombrelogin'],
+    'password' => $camposRecibidos['contraseñalogin']
+]);
+
+if ($esUsuarioValido) {
+    // Inicio de sesión exitoso
+    return redirect('/dashboard');
+} else {
+    // Credenciales incorrectas
+    return redirect("login")->withErrors(['login' => 'Credenciales incorrectas']);
+}
+```
+
+Ejemplo (cerrar sesión):
+```php
+auth()->guard()->logout(); // Cierra la sesión del usuario
+return redirect('/'); // Redirige a la página principal
+```
+
+Ejemplo (obtener usuario autenticado):
+```php
+$usuario = auth()->guard()->user(); // Obtiene el usuario autenticado
+echo $usuario->name; // Muestra el nombre del usuario
+echo $usuario->email; // Muestra el email del usuario
+// etc
+```
 
 ### Pasar la app a entorno explotación
 
