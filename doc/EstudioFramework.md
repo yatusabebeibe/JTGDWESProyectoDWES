@@ -346,7 +346,7 @@ class UsuarioController extends Controller
 En Laravel, los modelos representan las tablas de la base de datos y nos permiten interactuar con ellas de manera sencilla usando Eloquent, el ORM de Laravel. \
 Se crean normalmente en la carpeta `app/Models`.
 
-Podemos crear un modelo con su migración (para que se cree el archivo de migración) usando ``php artisan make:model Usuario -m``. ('-m' crea la migración)
+Podemos crear un modelo usando ``php artisan make:model Usuario``.
 
 Ejemplo:
 ```php
