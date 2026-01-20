@@ -430,6 +430,41 @@ DB::table('usuarios')
 ```
 
 #### Formularios y validaciones
+En Laravel, los formularios se usan para enviar datos desde una vista al servidor, normalmente mediante métodos POST. \
+Las validaciones permiten comprobar que los datos recibidos son correctos antes de procesarlos o guardarlos en la base de datos.
+
+Laravel facilita esto usando el objeto **`Request`** y el método **`validate()`**.
+
+Ejemplo (formulario):
+```php
+<form action="/login" method="POST">
+    @csrf <!-- Protección contra ataques CSRF. Es obligarorio ponerlo en todas las peticiones que no son get -->
+    // @method('PUT') <!-- Podemos especificar otro método HTTP si queremos -->
+
+    <label>Email:</label>
+    <input type="email" name="email">
+
+    <label>Contraseña:</label>
+    <input type="password" name="password">
+
+    <button type="submit">Entrar</button>
+</form>
+```
+
+Ejemplo (validación en en controlador):
+```php
+public function login(Request $request)
+{
+    $request->validate([
+        'email' => ['required', 'email', Rule::unique("users", "email")], // El email es obligatorio, debe ser un email válido y único en la tabla users
+        'password' => ['required', 'min:4', 'max:22'], // La contraseña es obligatoria, con longitud entre 4 y 22 caracteres
+    ]);
+
+    // Si la validación pasa, el código continúa. Si falla, Laravel vuelve al formulario con errores.
+    return 'Datos válidos';
+}
+```
+
 #### Control de acceso
 
 ### Pasar la app a entorno explotación
