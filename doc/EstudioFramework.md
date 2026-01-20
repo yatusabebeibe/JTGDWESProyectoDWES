@@ -98,8 +98,19 @@ Curso Laravel YouTube: https://www.youtube.com/playlist?list=PLZ2ovOgdI-kVtF2yQ2
 
 ## **Estudio practico**
 
-[**-> Link a la aplicación en explotación <-**](https://laravel.jesustemgal.ieslossauces.es/) \
-[**-> Link a su repositorio <-**](https://github.com/yatusabebeibe/proyectoLaravel/)
+### Descripción del entrono
+
+* **Sistema operativo local:** Windows 10 - *Usado para el desarrollo por la facilidad de uso.*
+* **Sistema operativo explotación:** Ubuntu Server - *Usado en producción por estabilidad y seguridad.*
+* **Servidor web local:** Artisan - *Permite ejecutar y probar la aplicación rápidamente en desarrollo.*
+* **Servidor web explotación:** Apache - *Sirve la aplicación de forma estable en producción.*
+* **PHP:** 8.3 - *Usamos esta versión porque es compatible con la ultima versión de Laravel y es la ultima disponible en el servidor de explotación.*
+* **Gestor de dependencias:** Composer - *Permite instalar y gestionar las librerías necesarias del proyecto de forma sencilla.*
+* **Base de datos:** MariaDB - *Sistema de gestión de bases de datos relacional, con entornos separados para pruebas y producción.*
+* **Framework:** Laravel - *Framework PHP que facilita la estructura, seguridad y mantenimiento de la aplicación.*
+* **Gestión de versiones:** Git y GitHub - *Permite llevar un control de cambios del código y colaboración entre desarrolladores.*
+* **Editor:** VS Code - *Entorno de desarrollo ligero y configurable, con soporte para PHP y Laravel.*
+* **Navegador:** Chrome y Firefox - *Usados para probar y depurar la aplicación, garantizando compatibilidad entre navegadores.*
 
 ### Primeros pasos (Preparar el entorno)
 
