@@ -250,6 +250,11 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     return view('welcome'); // Muestra la vista 'welcome.blade.php'
 });
+Route::get('/perfil', function () {
+    $nombre = "Jesús";
+    return view('perfil', ['nombre' => $nombre]); // Pasa la variable $nombre a la vista
+});
+
 
 Route::get('/hola', function () {
     return '¡Hola Mundo!'; // Devuelve un texto plano
@@ -264,6 +269,25 @@ Route::put(...) // Responde a peticiones PUT
 ```
 
 #### Vistas
+En Laravel, las vistas son los archivos que contienen el HTML de tu aplicación. Normalmente se encuentran en la carpeta `resources/views`.
+
+Laravel utiliza Blade, su motor de plantillas, que permite usar plantillas dinámicas y directivas como **@if/@else**, **@foreach**, **@include**, etc. \
+También se le pueden pasar datos a la vista desde la ruta o el controlador.
+
+Ejemplo siguiendo la ruta '/perfil' del ejemplo de rutas:
+```php
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Perfil de usuario</title>
+</head>
+<body>
+    <h1>Perfil</h1>
+    <p>Hola, {{ $nombre }}!</p> <!-- Muestra la variable pasada desde la ruta -->
+</body>
+</html>
+```
+
 #### Controladores
 #### Modelos
 #### Acceso a datos
