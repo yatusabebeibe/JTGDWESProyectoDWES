@@ -343,6 +343,38 @@ class UsuarioController extends Controller
 ```
 
 #### Modelos
+En Laravel, los modelos representan las tablas de la base de datos y nos permiten interactuar con ellas de manera sencilla usando Eloquent, el ORM de Laravel. \
+Se crean normalmente en la carpeta `app/Models`.
+
+Podemos crear un modelo con su migración (para que se cree el archivo de migración) usando ``php artisan make:model Usuario -m``. ('-m' crea la migración)
+
+Ejemplo:
+```php
+namespace App\Models;
+
+use Illuminate\Database\Eloquent\Factories\HasFactory;
+use Illuminate\Database\Eloquent\Model;
+
+class Usuario extends Model
+{
+    use HasFactory;
+
+    // Nombre de la tabla (opcional si no sigue la convención plural)
+    protected $table = 'usuarios';
+
+    // Campos que se pueden asignar en masa
+    protected $fillable = ['nombre', 'email', 'password'];
+
+    // Campos ocultos al convertir a JSON o array
+    protected $hidden = ['password'];
+
+    // Los casts permiten convertir automáticamente los atributos al tipo deseado al guardar o leer datos
+    protected function casts(): array {
+        return [ 'password' => 'hashed', ];
+    }
+}
+```
+
 #### Acceso a datos
 #### Formularios y validaciones
 #### Control de acceso
