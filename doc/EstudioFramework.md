@@ -500,6 +500,55 @@ echo $usuario->email; // Muestra el email del usuario
 // etc
 ```
 
+#### Migraciones
+En Laravel, las migraciones sirven para crear y modificar la estructura de la base de datos de forma controlada y versionada, sin escribir SQL directamente. \
+Se crean en la carpeta `database/migrations`.
+
+Podemos crear una usando `php artisan make:migration create_usuarios_table`.
+
+Ejemplo (definir la estructura de una tabla):
+```php
+use Illuminate\Database\Migrations\Migration;
+use Illuminate\Database\Schema\Blueprint;
+use Illuminate\Support\Facades\Schema;
+
+return new class extends Migration
+{
+    // Se ejecuta al aplicar la migración. Crea la tabla 'usuarios'.
+    public function up(): void
+    {
+        Schema::create('usuarios', function (Blueprint $table) {
+            $table->id(); // ID autoincremental
+            $table->string('nombre');
+            $table->string('email')->unique();
+            $table->string('password');
+            $table->timestamps(); // Crea automáticamente las columnas 'created_at' y 'updated_at'
+            $table->string('nombre_completo')->nullable(); // Campo opcional
+
+            // Clave foránea hacia roles:
+            // - rol_usuario → columna de ESTA tabla (usuarios)
+            // - id_rol → columna de la OTRA tabla (roles)
+            $table->foreignId('rol_usuario')
+                  ->constrained('roles', 'id_rol') // Si la columna se llamara 'id' en vez de 'id_rol' bastaría con ->constrained('roles')
+                  ->onDelete('cascade'); // si se borra un rol, se borran los usuarios asociados
+        });
+    }
+
+    // Se ejecuta al revertir la migración. Elimina la tabla 'usuarios'.
+    public function down()
+    {
+        Schema::dropIfExists('usuarios'); // Elimina la tabla si existe
+    }
+}
+```
+
+Una vez definidas las migraciones, podemos aplicarlas a la base de datos con:
+```bash
+php artisan migrate # Crea las tablas definidas en las migraciones
+php artisan migrate:rollback # Revierte la última migración aplicada
+php artisan migrate:fresh # Elimina todas las tablas y vuelve a crear todo desde cero
+```
+
 ### Pasar la app a entorno explotación
 
 Primero en el `.env` cambiamos esto:
