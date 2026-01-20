@@ -211,23 +211,30 @@ Para configurar la zona horaria, en la carpeta `/config` el archivo `app.php` bu
 
 ### Artisan
 
-¿Qué es artisan? Es la salvación, la segunda venida de Jesucristo y el 33% del poder de Ambrosio.
+Artisan es la interfaz de línea de comandos de Laravel. Es la herramienta principal para automatizar tareas comunes, desde **iniciar un servidor** hasta **generar código** y **gestionar la base de datos**.
 
-Básicamente, todo lo que necesites hacer lo puedes hacer con artisan.
+Algunas de las cosas mas útiles que puedes hacer con Artisan son:
 
-Puedes iniciar un servidor web con:
+Iniciar un servidor web:
 ```bash
 php artisan serve
 ```
+La aplicación será accesible desde http://localhost:8000.
 
-Crear vistas, modelos, controladores, componentes y mas con:
+Generar código automáticamente:
 ```bash
-php artisan make:<lo que quieras> <nombre que quieres que tenga>
+php artisan make:<tipo> <Nombre>
+# Ejemplo: php artisan make:controller UsuarioController
 ```
 
 Crear las tablas de la DB con:
 ```bash
 php artisan migrate
+```
+
+Puedes ver todas las opciones que tiene usando:
+```bash
+php artisan list
 ```
 
 ### Pasar la app a entorno explotación
