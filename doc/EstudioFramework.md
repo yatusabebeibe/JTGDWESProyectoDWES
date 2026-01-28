@@ -111,8 +111,8 @@ Curso Laravel YouTube: https://www.youtube.com/playlist?list=PLZ2ovOgdI-kVtF2yQ2
 ### Descripción del entrono
 
 * **Sistema operativo local:** Windows 10 - *Usado para el desarrollo por la facilidad de uso.*
-* **Sistema operativo explotación:** Ubuntu Server - *Usado en producción por estabilidad y seguridad.*
-* **Servidor web local:** Artisan - *Permite ejecutar y probar la aplicación rápidamente en desarrollo.*
+* **Sistema operativo explotación/desarrollo:** Ubuntu Server - *Usado en producción por estabilidad y seguridad.*
+* **Servidor web local/desarrollo:** Artisan - *Permite ejecutar y probar la aplicación rápidamente en desarrollo.*
 * **Servidor web explotación:** Apache - *Sirve la aplicación de forma estable en producción.*
 * **PHP:** 8.3 - *Usamos esta versión porque es compatible con la ultima versión de Laravel (12) y es la usada en nuestro servidor de explotación.*
 * **Gestor de dependencias:** Composer - *Permite instalar y gestionar las librerías necesarias del proyecto de forma sencilla.*
@@ -137,11 +137,22 @@ Para usar Laravel tenemos que instalar PHP, Composer, el propio Laravel para pod
 
 ##### PHP
 
-Abrimos una terminal y ponemos:
+En Windows abrimos una terminal y ponemos:
 ```powershell
 winget install PHP.PHP.8.3 # Para el usuario actual
 # o
 winget install PHP.PHP.8.3 --scope machine # Para todos los usuarios
+```
+
+O si estamos en un servidor Ubuntu Server:
+```bash
+sudo apt update
+sudo apt install software-properties-common -y # necesario para poder usar add-apt-repository
+sudo add-apt-repository ppa:ondrej/php # añade el repositorio de PHP
+sudo apt update
+sudo apt install php8.3 php8.3-cli php8.3-mbstring php8.3-xml php8.3-bcmath php8.3-curl php8.3-zip php8.3-intl php8.3-mysql -y # instala PHP 8.3 con todo lo necesario para funcionar
+php -v
+sudo apt-mark hold php8.3 php8.3-cli php8.3-mbstring php8.3-xml php8.3-bcmath php8.3-curl php8.3-zip php8.3-intl php8.3-mysql # bloquea la versión para que no se actualice automáticamente
 ```
 
 Esto instalara PHP 8.3 automáticamente y lo añadirá a PATH (hay que reiniciar la terminal para que haga efecto). \
@@ -151,20 +162,45 @@ Después, lo [configuramos](#configuración).
 
 ##### Composer
 
+Windows:
+
 Vamos a https://getcomposer.org/download/ y, descargamos y ejecutamos "***Composer-Setup.exe***".
 
 Le damos a instalar para todos o solo este usuario según queramos. En las opciones de instalación le damos a siguiente hasta instalar.
 
+Ubuntu Server:
+```bash
+# Descargamos el instalador de Composer
+curl -sS https://getcomposer.org/installer -o composer-setup.php
+
+# Instalamos Composer de forma global
+sudo php composer-setup.php --install-dir=/usr/local/bin --filename=composer
+
+# Borramos el instalador
+rm composer-setup.php
+
+# Comprobamos que se ha instalado correctamente y esta en el PATH
+composer --version
+```
+
 ##### Laravel
 
-Abrimos una nueva terminal para recargar los PATH, y ponemos:
-```powershell
+En Windows abrimos una nueva terminal para recargar los PATH, y ponemos:
+```bash
 composer global require laravel/installer
+```
+
+En Ubuntu Server:
+```bash
+composer global require laravel/installer
+sudo ln -s ~/.config/composer/vendor/bin/laravel /usr/local/bin/laravel # Esto añade laravel al PATH
 ```
 
 Esto instalara Laravel y todas sus dependencias.
 
 ##### NodeJS y npm
+
+En Windows:
 
 Vamos a https://nodejs.org/es/download y abajo, le damos al botón para descargar el `.msi`.
 
@@ -172,16 +208,34 @@ Lo ejecutamos, le damos a siguiente, aceptamos la licencia, y le damos a siguien
 
 Podemos comprobar que funciona haciendo `node -v` y `npm -v` respectivamente.
 
+
+En Ubuntu Server:
+```bash
+curl -fsSL https://deb.nodesource.com/setup_lts.x | sudo -E bash -
+sudo apt install -y nodejs
+```
+
+
 #### Configuración
 
 Para ver donde esta y configurar el archivo de php.ini podemos usar:
+
+En Windows:
 ```powershell
 (Get-Command php).Source
 ```
-
 Por defecto el archivo tiene dos php.ini: `php.ini-development` y `php.ini-production`.
 
-El de desarrollo lo copiamos y lo pegamos como `php.ini`, al final de todo el archivo ponemos:
+El de desarrollo lo copiamos y lo pegamos como `php.ini`
+
+
+En Ubuntu Server:
+```bash
+php --ini
+# Seleccionamos el que esta en el apartado: "Loaded Configuration File"
+```
+
+Luego, ya sea Windows o Ubuntu, al final de todo el archivo ponemos:
 ```ini
 extension_dir = "ext"
 extension=curl
@@ -212,6 +266,11 @@ Al terminar creara una carpeta con el nombre del proyecto que contenga todos los
 Hacemos:
 ```bash
 cd nombre_proyecto  # Para ir al proyecto
+
+# Si dio error al crear o generar la DB; modificamos la
+# configuracion en el .env y hacemos:
+php artisan migrate
+
 composer run dev    # Para iniciar el servidor web
 ```
 
@@ -235,8 +294,11 @@ Algunas de las cosas mas útiles que puedes hacer con Artisan son:
 Iniciar un servidor web:
 ```bash
 php artisan serve
+
+# O, si estamos en Ubuntu Server para poder acceder desde otros equipos
+php artisan serve --host=0.0.0.0 --port=8000 # Hay que habilitar el puerto
 ```
-La aplicación será accesible desde http://localhost:8000.
+La aplicación será accesible desde http://localhost:8000 o http://\<ip>:8000
 
 Generar código automáticamente:
 ```bash
