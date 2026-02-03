@@ -16,6 +16,7 @@
       - [`file_put_contents()`](#file_put_contents)
       - [`basename()`](#basename)
       - [`header()`](#header)
+      - [`cURL`](#curl)
     - [Clases](#clases)
       - [`DateTime`](#datetime)
       - [`PDO`](#pdo)
@@ -58,6 +59,7 @@
 | [`file_put_contents()`](#file_put_contents) | Escribe datos en un archivo (lo crea si no existe)                                   | int|false |
 | [`basename()`](#basename)                   | Obtiene solo el nombre de un archivo a partir de su ruta                             | string    |
 | [`header()`](#header)                       | Envía una cabecera HTTP al navegador (redirecciones, tipo de contenido, etc.)        | void      |
+| [`cURL()`](#curl)                           | Permite hacer peticiones HTTP/HTTPS desde PHP (GET, POST, etc.)                      | mixed     |
 
 #### `is_null()`
 
@@ -229,6 +231,30 @@ exit;
 ```
 
 Debe usarse antes de enviar cualquier salida al navegador.
+
+---
+
+#### `cURL`
+
+Librería que permite hacer peticiones HTTP/HTTPS desde PHP (GET, POST, PUT, DELETE, etc.). Se usa mucho para consumir APIs.
+
+```php
+$curl = curl_init("https://api.example.com/data"); // Inicializar cURL
+
+// Configurar opciones
+curl_setopt($curl, CURLOPT_RETURNTRANSFER, true); // Devuelve la respuesta como string
+
+$respuesta = curl_exec($curl); // Ejecutar la petición
+
+// Comprobar errores
+if (curl_errno($curl)) {
+    echo 'Error: ' . curl_error($curl);
+} else {
+    var_dump($respuesta);
+}
+
+curl_close($curl); // Cerrar la sesión cURL
+```
 
 ### Clases
 
